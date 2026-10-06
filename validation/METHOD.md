@@ -160,6 +160,40 @@ the same 80% rule (section 7) decides what can be quoted.
 **What may be said, once it passes:** "X of Y listed Solana endpoints fail an agent that follows the listing
 exactly" (strict), with the lenient figure and the error rate next to it. Not "the APIs are broken".
 
+## 10. Claim Q: the pay.sh waiting list
+
+*Added 2026-10-06, before any waiting-list listing was read or checked.*
+
+**Population.** Open pull requests in `solana-foundation/pay-skills` at the snapshot time that **add** a provider
+(a `providers/<operator>/<name>/PAY.md` that does not exist on `main`). Pull requests that only change an existing
+provider are counted and reported, not checked. Each listing is read at the pull request's head commit, recorded.
+
+**What the literal agent reads.** The `PAY.md` front matter (`service_url`, and `openapi.path` or inline
+`endpoints`) and the OpenAPI document committed next to it, with section 9's rules for pay.sh (parameter
+`example`, `examples`, `default` or single-value `enum`; request-body `example`). GET and POST only.
+
+**Levels per endpoint** (section 9, adapted because a waiting listing states no price the way the catalog does):
+
+| Level | Meaning |
+|---|---|
+| L0 | The request cannot be built from the listing |
+| L1 | No payment request: no answer, HTTP error, 2xx error or empty body, 402 without a Solana mainnet option or payment details |
+| L2 | A 402 with a Solana mainnet option, but a non-standard network name, a token other than USDC, or a price different from one the listing states |
+| L3 | A 402 with a standard Solana mainnet USDC option, matching any price the listing states |
+| free | A real 2xx answer without payment; the endpoint may be meant to be free. Reported, left out of the rates |
+
+**Per provider.** A provider reaches the payment step if at least one of its endpoints is L3. Reported with the
+share of its endpoints at each level.
+
+**Comparison.** The same levels for endpoints already accepted on pay.sh, from the same day's literal-agent run.
+
+**Validation.** As in section 9: a blind verifier with its own code, a sample stratified by level (L0, L1, L2:
+20 each; L3: 30), seed 20261011, Wilson intervals, the 80% rule.
+
+**What may be said, once it passes.** "Of N providers waiting to be listed on pay.sh, X reach a correct payment
+request for an agent that follows their listing", next to the same figure for accepted providers. Not a judgement
+of any seller, and nothing is shared with sellers or pay.sh before Leticia decides.
+
 ## Changes after 2026-10-06
 
 Made after round 1 (results in `2026-10-06/RESULTS.md`). Each applies from round 2 on; round 1 is scored on the
