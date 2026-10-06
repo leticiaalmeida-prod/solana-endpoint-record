@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solana Endpoint Record</title>
+<meta name="description" content="Every paid Solana endpoint we can find, checked every hour without paying.">
+<style>
+  :root {
+    --bg: #f7f8fa; --panel: #ffffff; --text: #14171c; --muted: #5c6470; --line: #e3e6eb;
+    --ok: #2f6fd6; --warn: #8a96a8; --bad: #14171c; --unclear: #c3cad4; --accent: #2f6fd6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d1117; --panel: #151b23; --text: #e6e9ee; --muted: #8b95a3; --line: #262e39;
+      --ok: #5b93ec; --warn: #8b95a3; --bad: #e6e9ee; --unclear: #3a4452; --accent: #5b93ec; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 24px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 17px; margin: 40px 0 8px; }
+  p { margin: 0 0 12px; color: var(--muted); max-width: 70ch; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 24px 0; }
+  .tile { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+  .tile b { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
+  .tile span { color: var(--muted); font-size: 13px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 12px; }
+  input[type=search] { flex: 1 1 240px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--panel); color: var(--text); font: inherit; }
+  button { padding: 7px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel);
+    color: var(--text); font: inherit; cursor: pointer; }
+  button[aria-pressed=true] { border-color: var(--accent); color: var(--accent); }
+  .wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .url { color: var(--muted); word-break: break-all; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  .v { white-space: nowrap; font-weight: 500; }
+  .v.alive { color: var(--ok); } .v.warning, .v.unclear { color: var(--muted); } .v.error, .v.down { color: var(--bad); }
+  .dots { display: flex; gap: 2px; }
+  .dots i { width: 6px; height: 14px; border-radius: 1px; background: var(--unclear); }
+  .dots i.a { background: var(--ok); } .dots i.w { background: var(--warn); } .dots i.e, .dots i.d { background: var(--bad); }
+  .notes { color: var(--muted); font-size: 12.5px; }
+  .more { margin: 10px 0; color: var(--muted); font-size: 13px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+  a { color: var(--accent); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Solana Endpoint Record</h1>
+  <p>Every paid Solana endpoint we can find, checked every hour without paying: does it answer, what does it charge,
+     where does the money go. Some we also buy, to see whether the answer is real.</p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Hourly checks</h2>
+  <p>A check is the request an agent sends before paying. A working endpoint answers with its price. We never pay in these checks.</p>
+  <div class="bar">
+    <input type="search" id="q" placeholder="Search seller or address" aria-label="Search">
+    <button id="f-all" aria-pressed="true">All</button>
+    <button id="f-prob" aria-pressed="false">Problems only</button>
+  </div>
+  <div class="wrap"><table>
+    <thead><tr><th>Seller</th><th>Endpoint</th><th>Price</th><th>Payers, 30 days</th><th>Now</th><th>Last 24 checks</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+  <div class="more" id="more"></div>
+
+  <h2>Paid checks</h2>
+  <p>We pay for one call and read the answer. A call counts as delivered only if the answer is real, not an error dressed as a success.</p>
+  <div class="wrap"><table>
+    <thead><tr><th>When (UTC)</th><th>Seller</th><th>Paid</th><th>What came back</th><th>Verdict</th><th>Transaction</th></tr></thead>
+    <tbody id="paid"></tbody>
+  </table></div>
+
+  <footer>
+    <p>Sources: Coinbase Bazaar and pay.sh catalogs. Checks run hourly for endpoints with 10 or more payers in 30 days and
+       everything on pay.sh, daily for the rest. Endpoints that are free, need path parameters, or would change data are not checked.
+       <span id="upd"></span></p>
+  </footer>
+</main>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const usd = v => v == null ? "—" : "$" + (v < 0.01 ? v.toFixed(4).replace(/0+$/, "") : v.toFixed(2));
+const PROBLEM = new Set(["warning", "error", "down"]);
+let data, filter = "all", shown = 200;
+
+function render() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  let rows = data.rows.filter(r => filter === "all" || PROBLEM.has(r.verdict));
+  if (q) rows = rows.filter(r => [r.seller, r.url, r.pay_to].join(" ").toLowerCase().includes(q));
+  rows.sort((a, b) => (b.payers_30d ?? -1) - (a.payers_30d ?? -1));
+  document.getElementById("rows").innerHTML = rows.slice(0, shown).map(r => `
+    <tr>
+      <td>${esc(r.seller)}</td>
+      <td><div class="url">${esc(r.method)} ${esc(r.url)}</div>${r.notes.length ? `<div class="notes">${esc(r.notes.join("; "))}</div>` : ""}</td>
+      <td class="num">${usd(r.price ?? r.listed_price)}</td>
+      <td class="num">${r.payers_30d ?? "—"}</td>
+      <td class="v ${esc(r.verdict)}">${esc(r.verdict)}</td>
+      <td><div class="dots">${[...r.recent].map(c => `<i class="${c}"></i>`).join("")}</div></td>
+    </tr>`).join("");
+  const more = document.getElementById("more");
+  more.innerHTML = rows.length > shown ? `Showing ${shown} of ${rows.length}. <button id="m">Show all</button>` : `${rows.length} endpoints`;
+  const m = document.getElementById("m"); if (m) m.onclick = () => { shown = Infinity; render(); };
+}
+
+fetch("data/page.json", {cache: "no-store"}).then(r => r.json()).then(d => {
+  data = d;
+  const n = v => d.rows.filter(r => r.verdict === v).length;
+  const sellers = new Set(d.rows.map(r => r.url.split("/")[2])).size;
+  document.getElementById("tiles").innerHTML = [
+    [d.listed.toLocaleString(), "Solana endpoints listed"], [d.rows.length.toLocaleString(), "checked"],
+    [sellers, "sites"], [n("alive"), "answering with a price"], [n("warning"), "warnings"], [n("error") + n("down"), "errors or down"],
+  ].map(([b, s]) => `<div class="tile"><b>${b}</b><span>${s}</span></div>`).join("");
+  document.getElementById("paid").innerHTML = d.paid.map(p => `
+    <tr><td class="num">${esc(p.at.replace("T", " ").replace("Z", ""))}</td><td>${esc(p.seller)}<div class="notes">${esc(p.endpoint)}</div></td>
+      <td class="num">${usd(p.price_usd)}</td><td><div class="url">HTTP ${esc(p.http_status)} ${esc(p.body)}</div><div class="notes">${esc(p.rule)}</div></td>
+      <td class="v ${p.verdict === "delivered" ? "alive" : "error"}">${esc(p.verdict)}</td>
+      <td><a class="url" href="https://solscan.io/tx/${esc(p.tx)}">${esc(p.tx.slice(0, 8))}…</a></td></tr>`).join("");
+  document.getElementById("upd").textContent = "Last check: " + (d.updated_at || "").replace("T", " ").replace("Z", " UTC");
+  render();
+});
+document.getElementById("q").oninput = () => { shown = 200; render(); };
+for (const [id, f] of [["f-all", "all"], ["f-prob", "problems"]]) document.getElementById(id).onclick = () => {
+  filter = f; shown = 200;
+  document.getElementById("f-all").setAttribute("aria-pressed", f === "all");
+  document.getElementById("f-prob").setAttribute("aria-pressed", f === "problems");
+  render();
+};
+</script>
+</body>
+</html>

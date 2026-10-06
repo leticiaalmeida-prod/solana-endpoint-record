@@ -1,0 +1,15 @@
+[
+ {
+  "at": "2026-10-05T18:44:38Z",
+  "seller": "Heurist Mesh",
+  "endpoint": "Caesar research (submit)",
+  "price_usd": 0.10,
+  "paid_to": "EAjHeMbh74YTddmTCWQ6PMXaR3fJPzKG9VEdKR4mPCcc",
+  "tx": "5JBJcYxJPVc2J1UeTPmp5scLRDeEigbX3AxohirnP7zroREfQQDmEeVsYweXKmFnJHETMjeFRLeFHtTEiSqJv8kv",
+  "http_status": 200,
+  "body": "{\"result\":{\"error\":\"API request failed: 402, message='Payment Required', url='https://api.caesar.xyz/research'\"}}",
+  "verdict": "not delivered",
+  "rule": "error inside a success response (the seller's own supplier asked for payment)",
+  "refunded": false
+ }
+]
