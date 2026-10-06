@@ -114,6 +114,52 @@ For ALIVE: problems missed in X of 50, with a 95% Wilson interval.
 | Per-check timestamp is the run's start time, not the request time | Times are accurate to about 15 minutes |
 | The checker reads at most 64 KB of each reply | A payment option beyond 64 KB would be missed |
 
+## 9. Claim L: does an agent that follows the listing reach a correct payment request?
+
+*Added 2026-10-06, before the literal agent was written or run. The checker (sections 2 to 7) asks whether an
+endpoint matches its listing. Claim L asks whether an agent that does exactly what the listing says succeeds.*
+
+**What the literal agent may use, and nothing else**
+
+| Catalog | Fields |
+|---|---|
+| Bazaar | `resource`; `extensions.bazaar.info.input`: `method`, `pathParams`, `queryParams`, `body`, `bodyType`, `headers` |
+| pay.sh | endpoint `method` and `path`; the provider's OpenAPI document (`openapi_doc`): each parameter's `example`, `examples`, `default` or single-value `enum`, and the request body's `example` |
+
+No documentation pages, no other catalogs, no model, no guessing of values.
+
+**How it builds the request**
+
+1. Each path template (`:name`, `{name}`, `<name>`) is replaced by the listing's value whose name is **exactly** the
+   same. Query parameters given as examples are added. A JSON body is sent if the listing gives one, else `{}` for a
+   POST. No payment header. Same timeout, pacing and methods as the checker.
+2. If a template has no value of exactly the same name, the request cannot be built.
+
+**Levels** (one per listing; the lowest that applies)
+
+| Level | Meaning | Agent-ready at the payment step? |
+|---|---|---|
+| L0 cannot build | A template has no value of the same name. Sub-causes: *name mismatch* (a value exists under another name), *described only* (type given, no value), *not described* | No |
+| L1 no payment request | The built request gets no answer, an HTTP error, a 2xx error or empty body, or a 402 without a Solana mainnet option or without payment details | No |
+| L2 payable but wrong | A 402 with a Solana mainnet option, but price or address differs from the listing, the network name is non-standard, or the token is not USDC | No |
+| L3 payable and right | A 402 whose Solana mainnet USDC option matches the listing's price and, where listed, its address | Yes |
+
+Delivery after paying (L4) needs a paid call and is outside this claim.
+
+**Sensitivity check, reported next to the main result, never instead of it:** a *lenient* agent that also accepts a
+value whose name differs only by case, separators, or a prefix or suffix (`solana_address` ↔ `address`). The gap
+between strict and lenient is reported as "needs guessing".
+
+**Transient failures:** an L1 caused by a timeout, DNS failure, HTTP 429 or 5xx is reported as "L1 (seen once)"
+until it persists under section 7's rule.
+
+**Validation:** the blind verifier of round 2 builds its own literal agent from this section alone. Sample:
+stratified by level (L0, L1, L2: 20 each; L3: 50), seed 20261009. Agreement per level with a 95% Wilson interval;
+the same 80% rule (section 7) decides what can be quoted.
+
+**What may be said, once it passes:** "X of Y listed Solana endpoints fail an agent that follows the listing
+exactly" (strict), with the lenient figure and the error rate next to it. Not "the APIs are broken".
+
 ## Changes after 2026-10-06
 
 Made after round 1 (results in `2026-10-06/RESULTS.md`). Each applies from round 2 on; round 1 is scored on the
