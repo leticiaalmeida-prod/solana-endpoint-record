@@ -30,7 +30,7 @@ print()
 for mode in ("strict", "lenient"):
     print(f"literal agent, {mode}:")
     for lv, ids in sample["strataB"].items():
-        pairs = [(literal[i][mode]["level"], ((lab[i].get("literal") or {}).get(mode) or {}).get("level")) for i in ids if i in lab]
+        pairs = [(literal[i][mode]["level"], {"NONE": "served"}.get(t, t)) for i in ids if i in lab for t in [((lab[i].get("literal") or {}).get(mode) or {}).get("level")]]
         k = sum(a == b for a, b in pairs); n = len(pairs); lo, hi = wilson(k, n)
         report["levels"].append([mode, lv, sample["populationB"][lv], k, n, lo, hi, lo >= 0.8])
         print(f"  {lv}: {k}/{n} agree, {lo:.0%}-{hi:.0%}  {'quotable' if lo >= 0.8 else 'NOT quotable'}  "

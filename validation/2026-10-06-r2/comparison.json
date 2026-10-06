@@ -1,0 +1,408 @@
+{
+ "claims": [
+  [
+   "N2",
+   7,
+   7,
+   7,
+   0.6456611570247934,
+   1.0,
+   false
+  ],
+  [
+   "N6",
+   4,
+   3,
+   4,
+   0.3006360524426366,
+   0.9544139373553637,
+   false
+  ],
+  [
+   "N1",
+   149,
+   20,
+   20,
+   0.8388698745050667,
+   1.0,
+   true
+  ],
+  [
+   "N3",
+   14,
+   6,
+   14,
+   0.21380509930400526,
+   0.6740973309713064,
+   false
+  ],
+  [
+   "N4",
+   162,
+   20,
+   20,
+   0.8388698745050667,
+   1.0,
+   true
+  ],
+  [
+   "N5",
+   62,
+   20,
+   20,
+   0.8388698745050667,
+   1.0,
+   true
+  ],
+  [
+   "E",
+   26,
+   18,
+   20,
+   0.6989617935882066,
+   0.9721341060158468,
+   false
+  ],
+  [
+   "D",
+   7,
+   0,
+   7,
+   0.0,
+   0.35433884297520657,
+   false
+  ],
+  [
+   "U",
+   133,
+   15,
+   20,
+   0.5312949900419365,
+   0.888139947210597,
+   false
+  ],
+  [
+   "ALIVE",
+   6792,
+   45,
+   50,
+   0.7863950966521162,
+   0.956524876008429,
+   false
+  ]
+ ],
+ "levels": [
+  [
+   "strict",
+   "L0",
+   177,
+   17,
+   20,
+   0.6395767041130426,
+   0.9476322080405041,
+   false
+  ],
+  [
+   "strict",
+   "L1",
+   238,
+   14,
+   20,
+   0.4810232237710206,
+   0.854524726031006,
+   false
+  ],
+  [
+   "strict",
+   "L2",
+   394,
+   14,
+   20,
+   0.4810232237710206,
+   0.854524726031006,
+   false
+  ],
+  [
+   "strict",
+   "L3",
+   7094,
+   47,
+   50,
+   0.8378265662912299,
+   0.9793854036353695,
+   true
+  ],
+  [
+   "lenient",
+   "L0",
+   177,
+   17,
+   20,
+   0.6395767041130426,
+   0.9476322080405041,
+   false
+  ],
+  [
+   "lenient",
+   "L1",
+   238,
+   14,
+   20,
+   0.4810232237710206,
+   0.854524726031006,
+   false
+  ],
+  [
+   "lenient",
+   "L2",
+   394,
+   14,
+   20,
+   0.4810232237710206,
+   0.854524726031006,
+   false
+  ],
+  [
+   "lenient",
+   "L3",
+   7094,
+   47,
+   50,
+   0.8378265662912299,
+   0.9793854036353695,
+   true
+  ]
+ ],
+ "disagree": [
+  [
+   "A",
+   "N6",
+   "POST https://sentinel-agent.dev/v1/guard"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://agents.ai-rook.com/api/gas-tracker"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://agents.ai-rook.com/api/ip-lookup"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://agents.ai-rook.com/api/market-pulse"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://api.robotsshop.io/v0/live"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://api.robotsshop.io/v0/swartzpath"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://voidfeed.ai/v1/content/extract/dataset/latest"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://voidfeed.ai/v1/content/fact-feed/latest"
+  ],
+  [
+   "A",
+   "N3",
+   "POST https://api.locus.report/api/locus-fema-events"
+  ],
+  [
+   "A",
+   "E",
+   "GET https://agents.ai-rook.com/api/order-flow"
+  ],
+  [
+   "A",
+   "E",
+   "GET https://api.x-402.online/v1/chain/ens"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/ability-check"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/cve"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/exchange-rates"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/hacker-news-search"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/keyword-suggest"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/qr-generator"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/stock-news"
+  ],
+  [
+   "A",
+   "U",
+   "GET https://x402.quicknode.com/discovery/resources"
+  ],
+  [
+   "A",
+   "U",
+   "GET https://api.venice.ai/api/v1/models"
+  ],
+  [
+   "A",
+   "U",
+   "GET https://api.socialintel.dev/v1/contact"
+  ],
+  [
+   "A",
+   "U",
+   "GET https://travel.brij.fi/health"
+  ],
+  [
+   "A",
+   "U",
+   "GET https://x402.quicknode.com/networks"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "GET https://public-api.birdeye.so/x402/defi/v3/token/list"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "POST https://twin.unykorn.org/geo/earthquakes"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "GET https://public-api.birdeye.so/x402/defi/v3/token/mint-burn-txs"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "POST https://twin.unykorn.org/abi-encode"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "GET https://public-api.birdeye.so/x402/defi/ohlcv/pair"
+  ],
+  [
+   "B",
+   "L0",
+   "POST https://videointelligence.google.gateway-402.com/v1/videos:annotate"
+  ],
+  [
+   "B",
+   "L0",
+   "GET https://pay.smartmoney.market/api/ticker/{symbol}"
+  ],
+  [
+   "B",
+   "L0",
+   "GET https://pay.smartmoney.market/api/ticker/{symbol}/funds"
+  ],
+  [
+   "B",
+   "L1",
+   "GET https://pay.smartmoney.market/api/insider-tracked-stocks"
+  ],
+  [
+   "B",
+   "L1",
+   "GET https://pay.smartmoney.market/api"
+  ],
+  [
+   "B",
+   "L1",
+   "POST https://app.earnfi.fun/api/ai-agent/v1/catalog"
+  ],
+  [
+   "B",
+   "L1",
+   "GET https://pplx.x402.paysponge.com/v1/models"
+  ],
+  [
+   "B",
+   "L1",
+   "GET https://api.venice.ai/api/v1/models/compatibility_mapping"
+  ],
+  [
+   "B",
+   "L1",
+   "GET https://api.venice.ai/api/v1/api_keys/generate_web3_key"
+  ],
+  [
+   "B",
+   "L2",
+   "GET https://saylorinnovations.com/api/kb/agent-capability-registry"
+  ],
+  [
+   "B",
+   "L2",
+   "GET https://saylorinnovations.com/api/kb/dns-tls-deployment-triage"
+  ],
+  [
+   "B",
+   "L2",
+   "GET https://saylorinnovations.com/api/package/search"
+  ],
+  [
+   "B",
+   "L2",
+   "GET https://saylorinnovations.com/api/data/country"
+  ],
+  [
+   "B",
+   "L2",
+   "GET https://saylorinnovations.com/api/kb/database-migration-rollback"
+  ],
+  [
+   "B",
+   "L2",
+   "GET https://tariffmonkee.com/paid/content"
+  ],
+  [
+   "B",
+   "L3",
+   "GET https://public-api.birdeye.so/x402/defi/token_creation_info"
+  ],
+  [
+   "B",
+   "L3",
+   "POST https://twin.unykorn.org/research/pypi-package"
+  ],
+  [
+   "B",
+   "L3",
+   "POST https://twin.unykorn.org/compound-growth"
+  ]
+ ]
+}
