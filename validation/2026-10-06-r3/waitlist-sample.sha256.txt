@@ -1,0 +1,3 @@
+Waiting-list sample (METHOD.md section 10, seed 20261011), drawn 2026-10-06T06:48:19Z before checking.
+The file names unaccepted sellers and is kept private. Its SHA-256:
+dbb66f1c56e75ae42ef1c1d64f882761661624ec494041956414c4fdbeb52227
