@@ -131,11 +131,10 @@ def buy(method, url, body):
 
 
 def top_story_from(record):
+    """METHOD.md section 1: the first headline in toon.haus Market News, read from the seller's own answer."""
     try:
-        out = json.loads(record["bought"]["stdout"])
-        text = json.dumps(out)
-        start = text.find('"headline"')
-        return json.loads(text[start + 11:].split(",")[0].strip()) if start >= 0 else None
+        body = json.loads(record["bought"]["stdout"])["response"]["output"]["value"]["resource"]["body"]
+        return (json.loads(body).get("news") or [{}])[0].get("headline")
     except Exception:
         return None
 

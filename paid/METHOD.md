@@ -66,4 +66,7 @@ total about $7.50 for 25 runs of three bundles.
 
 ## Changes
 
-None yet.
+| # | Change | Why |
+|---|---|---|
+| P1 | New step verdict: **could not pay**, when the seller rejects the wallet's payment and nothing is charged (confirmed on Base). It counts as not delivered for the run, and is reported apart from seller failures | Pilot, 6 Oct 22:10Z: BlockRun's payment check (Coinbase's) rejected all three PayBox payments ("paymentPayload is invalid"); Base shows no charge for them |
+| P2 | Bug fix: the Morning Briefing top story is read from toon.haus's answer body (`news[0].headline`); the pilot read the wallet's wrapper and skipped the deep-dive steps | Pilot, 6 Oct |
