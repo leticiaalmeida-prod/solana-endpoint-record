@@ -3,7 +3,7 @@
 Reads each open pull request that adds a provider, at its head commit, and follows the listing exactly.
 Never pays. Needs the GitHub CLI (`gh`) and PyYAML.
 
-Usage: python3 queue.py <output dir>   (results name unaccepted sellers; keep them out of the public repo)
+Usage: python3 waitlist.py <output dir>   (results name unaccepted sellers; keep them out of the public repo)
 """
 import json
 import os
