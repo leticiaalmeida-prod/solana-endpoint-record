@@ -224,3 +224,7 @@ original wording.
 Checker v0.3 implements changes 11–19. Under section 7 it is re-tested on a new sample (round 3) before any
 failure-side figure is quoted.
 
+**Round 3 (fixed 2026-10-06 before drawing):** snapshot = the first v0.3 data commit on GitHub after 05:35Z; checker
+claims and literal levels drawn as in round 2 with seed 20261012 (claims) and 20261013 (levels); the waiting list
+(section 10) drawn with seed 20261011. One blind verifier labels all of them, told to follow redirects (change 18).
+
