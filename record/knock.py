@@ -68,7 +68,9 @@ def network_kind(net):
 def solana_options(accepts):
     """Solana options: network, kind, asset, price in USD (USDC only), payment address."""
     out = []
-    for a in accepts or []:
+    for a in accepts if isinstance(accepts, list) else []:
+        if not isinstance(a, dict):  # some servers send plain strings here; they offer nothing payable
+            continue
         net = str(a.get("network", ""))
         if not net.lower().startswith("solana"):
             continue
@@ -157,7 +159,7 @@ def judge(ep, f):
     opts = [o for d in docs for o in solana_options(d.get("accepts"))]
 
     if s == 402:
-        if not any(d.get("accepts") for d in docs):
+        if not any(isinstance(d.get("accepts"), list) and any(isinstance(x, dict) for x in d["accepts"]) for d in docs):
             return {"verdict": "warning", "notes": ["asks for payment but gives no payment details"]}
         if not opts:
             return {"verdict": "warning", "notes": ["asks for payment but offers no Solana option"]}
