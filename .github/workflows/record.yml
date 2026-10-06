@@ -15,6 +15,8 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -26,13 +28,15 @@ jobs:
         run: python record/knock.py daily
       - name: Check the hourly tier
         run: python record/knock.py hourly
+      - name: Re-check the validation sample (until 2026-10-07 05:00 UTC)
+        run: python validation/repeat.py validation/2026-10-06 github-us
       - name: Build page data
         run: python record/page_data.py
       - name: Save
         run: |
           git config user.name "record-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          git add data validation/2026-10-06/repeats.jsonl
           git diff --cached --quiet && exit 0
           git commit -m "checks $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase
