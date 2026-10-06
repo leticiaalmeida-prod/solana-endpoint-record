@@ -257,3 +257,26 @@ with up to two disagreements, and the waiting list under v0.4.
   re-checked and read by hand, and assigned one cause. The as-measured figure is the one quoted.
 - MPP endpoints are counted and reported next to the waiting-list levels, not inside them.
 
+### Changes after round 4
+
+Made after round 4 (results in `2026-10-06-r4/RESULTS.md`), before round 5 was drawn. Round 4 stays scored on v0.4.
+
+| # | Change | Why |
+|---|---|---|
+| 23 | A **path** value is a description, not a value, when it is a string containing whitespace, a string that is exactly a type word (`string`, `number`, `integer`, `boolean`, `object`, `array`, any case), or an object or list. It counts as absent, so the request cannot be built ("described only", L0). Query values are still sent as given | Round 4: "EVM wallet address (0x-prefixed, 40 hex characters)" was sent as an address by the checker (L1) and read as a description by the verifier (L0); 10 cases |
+| 24 | From 7 October the literal agent runs four times a day on GitHub (04:37, 10:37, 16:37, 22:37 UTC) and keeps each listing's recent levels. An L1 is **persistent** when the listing was L1 in at least 3 of the 4 runs in the 24 hours ending at the snapshot. Only persistent L1s may be quoted as "no payment request"; the rest are reported as intermittent. All four runs come from GitHub's US runners, so the claim says so; section 7's second place is not part of it | Round 4: 9 of 19 L1 disagreements were hosts that failed once and answered 20 minutes later |
+| 25 | A waiting listing that defines a parameter asking for a free or trial call (its name is `trial`, or its description contains "trial", "free call" or "try before you buy") is reported apart from the waiting-list rates and samples. Its reply depends on whether the trial was already used, so one request cannot classify it | Round 4: 18 of 22 waiting-list disagreements came from one such listing |
+
+Checker v0.5 implements changes 23–25.
+
+**Round 5 (fixed 2026-10-06 before drawing).**
+
+- Catalog snapshot: the data commit written by the 16:37 UTC run on 8 October 2026; its 24-hour window holds the runs of
+  7 Oct 22:37 and 8 Oct 04:37, 10:37 and 16:37. Seed **20261016**: persistent L1 40, L0 40, L3 30 (control).
+  Intermittent L1s are counted, not sampled.
+- Waiting list: `record/waitlist.py` under v0.5, started within 60 minutes after that snapshot. Seed **20261017**: L0 40,
+  L2 40 (all if fewer), trial listings excluded per change 25. Sample private, SHA-256 published before verifying.
+- One blind verifier, as in round 4, with amendments 1–25, started within 30 minutes of the waiting-list run's end. If
+  the Mac is not available on 8 October, the snapshot moves to the same run on the next day; nothing else changes.
+- Scored as before: 95% Wilson intervals, the 80% rule, every disagreement read by hand and given one cause.
+

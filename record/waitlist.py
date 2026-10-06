@@ -79,6 +79,7 @@ def endpoints(row):
             doc = {}
     elif isinstance(oa, dict) and isinstance(oa.get("content"), (dict, str)):
         doc = oa["content"] if isinstance(oa["content"], dict) else (yaml.safe_load(oa["content"]) or {})
+    trial = trial_listing(doc)
     for path, ops in (doc.get("paths") or {}).items():
         for method, op in (ops or {}).items():
             if method.upper() in ("GET", "POST"):
@@ -88,7 +89,23 @@ def endpoints(row):
         if isinstance(e, dict) and str(e.get("method", "GET")).upper() in ("GET", "POST"):
             eps.append({"method": str(e.get("method", "GET")).upper(), "path": e.get("path", ""), "input": {},
                         "stated_price": None})
-    return base, eps, bool(text), bool(doc) or bool(fm.get("endpoints"))
+    return base, eps, bool(text), bool(doc) or bool(fm.get("endpoints")), trial
+
+
+TRIAL_WORDS = ("trial", "free call", "try before you buy")
+
+
+def trial_listing(doc):
+    """METHOD.md change 25: the listing defines a parameter that asks for a free or trial call."""
+    params = [resolve(doc, p) for p in ((doc.get("components") or {}).get("parameters") or {}).values()]
+    for ops in (doc.get("paths") or {}).values():
+        for op in (resolve(doc, ops) or {}).values():
+            if isinstance(op, dict):
+                params += [resolve(doc, p) for p in op.get("parameters") or []]
+            elif isinstance(op, list):  # path-level parameters
+                params += [resolve(doc, p) for p in op]
+    return any(str(p.get("name", "")).lower() == "trial"
+               or any(w in str(p.get("description", "")).lower() for w in TRIAL_WORDS) for p in params)
 
 
 def level(j):
@@ -97,8 +114,8 @@ def level(j):
 
 
 def check(row):
-    base, eps, has_md, has_spec = endpoints(row)
-    row = dict(row, service_url=base, read_ok=has_md, spec_ok=has_spec, endpoints=[])
+    base, eps, has_md, has_spec, trial = endpoints(row)
+    row = dict(row, service_url=base, read_ok=has_md, spec_ok=has_spec, trial_listing=trial, endpoints=[])
     if not base:
         return row
     for n, e in enumerate(eps):

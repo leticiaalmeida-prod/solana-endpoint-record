@@ -39,16 +39,29 @@ def find(name, values, lenient):
     return None, None
 
 
+TYPE_WORDS = {"string", "number", "integer", "boolean", "object", "array"}
+
+
+def is_description(v):
+    """METHOD.md change 23: a path value that describes the input instead of giving one."""
+    if isinstance(v, (dict, list)):
+        return True
+    return isinstance(v, str) and (any(c.isspace() for c in v) or v.strip().lower() in TYPE_WORDS)
+
+
 def build(ep, lenient=False):
     """Return (request ep, None) or (None, reason) when the listing does not give what the URL needs."""
     inp = ep.get("input") or {}
     path_vals = inp.get("pathParams") or {}
     u = urlparse(ep["url"])
-    missing = []
+    missing, described = [], []
 
     def fill(m):
         name = m.group(1) or m.group(2) or m.group(3)
         val, _ = find(name, path_vals, lenient)
+        if val is not None and is_description(val):
+            described.append(name)
+            val = None
         if val is None:
             missing.append(name)
             return m.group(0)
@@ -56,7 +69,9 @@ def build(ep, lenient=False):
 
     path = TEMPLATE.sub(fill, u.path)
     if missing:
-        if any(find(n, path_vals, True)[0] is not None for n in missing):
+        if described:
+            why = "described only"
+        elif any(find(n, path_vals, True)[0] is not None for n in missing):
             why = "name mismatch"
         elif any(n in (inp.get("described") or []) for n in missing):
             why = "described only"
@@ -126,8 +141,18 @@ def main():
         for m in summary:
             k = r[m]["level"] + (" (seen once)" if r[m].get("seen_once") else "")
             summary[m][k] = summary[m].get(k, 0) + 1
-    doc = {"checked_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "summary": summary, "rows": rows}
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    doc = {"checked_at": now, "summary": summary, "rows": rows}
     json.dump(doc, open(os.path.join(DATA, "literal.json"), "w"), separators=(",", ":"))
+    # METHOD.md change 24: recent strict levels per listing, to tell persistent failures from blips
+    hp = os.path.join(DATA, "literal-history.json")
+    hist = json.load(open(hp)) if os.path.exists(hp) else {}
+    for i, r in rows.items():
+        h = hist.setdefault(i, [])
+        h.append([now, r["strict"]["level"]])
+        del h[:-8]
+    hist = {i: h for i, h in hist.items() if i in rows}
+    json.dump(hist, open(hp, "w"), separators=(",", ":"))
     print(json.dumps(summary))
 
 

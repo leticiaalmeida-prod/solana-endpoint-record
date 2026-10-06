@@ -19,10 +19,10 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-VERSION = "0.4"
+VERSION = "0.5"
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
-UA = "solana-endpoint-record/0.4 (+https://github.com/leticiaalmeida-prod/solana-endpoint-record)"
+UA = "solana-endpoint-record/0.5 (+https://github.com/leticiaalmeida-prod/solana-endpoint-record)"
 USDC = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 STANDARD_NETWORKS = {"solana", "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"}
 TEST_NETWORKS = {"solana-devnet", "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1"}

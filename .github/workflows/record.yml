@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: "7 * * * *"    # hourly checks
     - cron: "37 4 * * *"   # daily: refresh catalogs, check everything else
+    - cron: "37 10,16,22 * * *"  # literal agent three more times a day (METHOD.md change 24)
   workflow_dispatch:
 permissions:
   contents: write
@@ -26,8 +27,8 @@ jobs:
       - name: Check the daily tier
         if: github.event.schedule == '37 4 * * *' || github.event_name == 'workflow_dispatch'
         run: python record/knock.py daily
-      - name: Literal agent (daily; validation/METHOD.md section 9)
-        if: github.event.schedule == '37 4 * * *' || github.event_name == 'workflow_dispatch'
+      - name: Literal agent (four times a day; validation/METHOD.md section 9, change 24)
+        if: github.event.schedule == '37 4 * * *' || github.event.schedule == '37 10,16,22 * * *' || github.event_name == 'workflow_dispatch'
         run: python record/literal.py
       - name: Check the hourly tier
         run: python record/knock.py hourly
