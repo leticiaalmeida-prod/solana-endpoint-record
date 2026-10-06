@@ -126,12 +126,12 @@ def buy(c, ch):
     return out
 
 
-def run(group, budget, rnd, limit):
+def run(group, budget, rnd, limit, offset=0):
     sel = json.load(open(os.path.join(OUT, "groups-selection.json")))[group]
     spent = 0.0
     path = os.path.join(OUT, f"groups-{group}-round{rnd}-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}.jsonl")
     with open(path, "w") as f:
-        for n, (prov, c) in enumerate(sel.items()):
+        for n, (prov, c) in enumerate(list(sel.items())[offset:]):
             if limit and n >= limit:
                 break
             ch = solana_option({"method": c["method"], "url": c["url"], "body": c["body"], "headers": c["headers"]})
@@ -161,10 +161,11 @@ if __name__ == "__main__":
     ap.add_argument("--budget", type=float, default=0.0)
     ap.add_argument("--round", type=int, default=1)
     ap.add_argument("--limit", type=int, default=0, help="stop after N providers (pilot)")
+    ap.add_argument("--offset", type=int, default=0, help="skip the first N providers (already bought this round)")
     a = ap.parse_args()
     if a.mode == "select":
         select()
     else:
         if not a.group or a.budget <= 0:
             sys.exit("A paid run needs --group and --budget.")
-        run(a.group, a.budget, a.round, a.limit)
+        run(a.group, a.budget, a.round, a.limit, a.offset)
