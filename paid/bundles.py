@@ -1,4 +1,4 @@
-"""Run agentic.market's bundles as published, paying each step through the PayBox CLI (paid/METHOD.md).
+"""Run agentic.market's bundles as published, PayBox signing each payment (paid/METHOD.md, change P3).
 
 The recipes are followed step by step with fixed inputs, so no model chooses anything. Before every purchase the
 step is knocked without paying to read its price; the purchase is refused if the price is over the cap, if the seller
@@ -14,9 +14,12 @@ Results (they name sellers) go to OUT, outside the public repo.
 import argparse
 import json
 import os
+import base64
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 from urllib.parse import urlencode
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "record"))
@@ -110,31 +113,67 @@ def talent_scanner(i):
 BUNDLES = {"market": market_research, "talent": talent_scanner, "morning": morning_briefing}
 
 
-def price_of(method, url, body):
-    """Knock without paying; return (price in dollars on Base USDC or None, status)."""
+def challenge(method, url, body):
+    """Knock without paying. Returns the Base USDC option, the 402's version and resource, and the status."""
     f = fetch({"method": method, "url": url, "body": body})
     docs = payment_docs(f.get("headers") or [], f.get("body") or b"")
-    amts = [int(a.get("amount") or a.get("maxAmountRequired")) / 1e6 for d in docs for a in d.get("accepts") or []
-            if isinstance(a, dict) and a.get("network") in (NETWORK, "base") and str(a.get("asset", "")).lower()
-            == USDC_BASE.lower() and str(a.get("amount") or a.get("maxAmountRequired") or "").isdigit()]
-    return (min(amts) if amts else None), f.get("status")
+    for d in docs:
+        for a in d.get("accepts") or []:
+            amt = str(a.get("amount") or a.get("maxAmountRequired") or "") if isinstance(a, dict) else ""
+            if (a.get("network") in (NETWORK, "base") and str(a.get("asset", "")).lower() == USDC_BASE.lower()
+                    and amt.isdigit()):
+                return {"option": a, "price": int(amt) / 1e6, "version": d.get("x402Version"),
+                        "resource": d.get("resource"), "status": f.get("status")}
+    return {"option": None, "price": None, "status": f.get("status")}
 
 
-def buy(method, url, body):
-    cmd = ["npx", "-y", "@paybox-sh/sdk", "--json", "use-service", "--credential", CREDENTIAL, "--url", url,
-           "--method", method]
-    if body is not None:
-        cmd += ["--body", json.dumps(body)]
+def send(method, url, body, header_name, header_value):
+    data = json.dumps(body).encode() if body is not None else (b"{}" if method == "POST" else None)
+    headers = {"User-Agent": "solana-endpoint-record/paid-0.2", "Accept": "application/json", header_name: header_value}
+    if data:
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(url, data=data, method=method, headers=headers)
     t0 = time.time()
-    p = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
-    return {"exit": p.returncode, "stdout": p.stdout[-200000:], "stderr": p.stderr[-4000:], "secs": round(time.time() - t0, 1)}
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            st, hd, b = r.status, list(r.headers.items()), r.read(200000)
+    except urllib.error.HTTPError as e:
+        st, hd, b = e.code, list(e.headers.items()), e.read(200000)
+    except Exception as e:
+        return {"status": None, "error": type(e).__name__, "secs": round(time.time() - t0, 1)}
+    return {"status": st, "headers": hd, "body": b.decode("utf-8", "replace"), "secs": round(time.time() - t0, 1)}
+
+
+def buy(method, url, body, ch):
+    """METHOD.md change P3: PayBox signs (header mode); we send the request. A v2 challenge gets a v2 envelope."""
+    tmp = os.path.join(OUT, ".accepts.json")
+    json.dump([ch["option"]], open(tmp, "w"))
+    p = subprocess.run(["npx", "-y", "@paybox-sh/sdk", "--json", "pay-x402", "--credential", CREDENTIAL, "--url", url,
+                        "--accepts", "@" + tmp], capture_output=True, text=True, timeout=180)
+    out = {"paybox_exit": p.returncode, "paybox_stderr": p.stderr[-2000:]}
+    try:
+        val = json.loads(p.stdout)["response"]["output"]["value"]
+        signed = json.loads(base64.b64decode(val["x_payment"] + "=="))
+    except Exception:
+        out["paybox_stdout"] = p.stdout[-4000:]
+        out["verdict_hint"] = "PayBox did not sign"
+        return out
+    out["paybox_payload_version"] = signed.get("x402Version")
+    if ch.get("version") == 2:
+        env = {"x402Version": 2, "resource": ch.get("resource"), "accepted": ch["option"], "payload": signed["payload"]}
+        out["sent_as"] = "v2 envelope, PAYMENT-SIGNATURE"
+        out["reply"] = send(method, url, body, "PAYMENT-SIGNATURE", base64.b64encode(json.dumps(env).encode()).decode())
+    else:
+        out["sent_as"] = "as signed, X-PAYMENT"
+        out["reply"] = send(method, url, body, "X-PAYMENT", val["x_payment"])
+    out["authorization"] = {k: signed["payload"]["authorization"].get(k) for k in ("from", "to", "value", "nonce")}
+    return out
 
 
 def top_story_from(record):
     """METHOD.md section 1: the first headline in toon.haus Market News, read from the seller's own answer."""
     try:
-        body = json.loads(record["bought"]["stdout"])["response"]["output"]["value"]["resource"]["body"]
-        return (json.loads(body).get("news") or [{}])[0].get("headline")
+        return (json.loads(record["bought"]["reply"]["body"]).get("news") or [{}])[0].get("headline")
     except Exception:
         return None
 
@@ -147,9 +186,10 @@ def run_bundle(name, i, pay, state):
     def do(steps):
         for sid, method, url, body, required in steps:
             host = url.split("/")[2]
-            price, status = price_of(method, url, body)
+            ch = challenge(method, url, body)
+            price, status = ch["price"], ch["status"]
             s = {"step": sid, "required": required, "method": method, "url": url, "body": body, "knock_status": status,
-                 "price": price}
+                 "price": price, "x402_version": ch.get("version")}
             if host not in APPROVED:
                 s["skipped"] = "seller not on the approved list"
             elif price is None:
@@ -159,11 +199,11 @@ def run_bundle(name, i, pay, state):
             elif state["spent"] + price > state["budget"] + 1e-9:
                 s["skipped"] = "would pass the approved budget"
             elif pay:
-                s["bought"] = buy(method, url, body)
+                s["bought"] = buy(method, url, body, ch)
                 state["spent"] += price
             rec["steps"].append(s)
             print(f"  {name} #{i} {sid:16} ${price if price is not None else '-':<7} "
-                  f"{s.get('skipped') or ('bought, exit ' + str(s['bought']['exit']) if pay else 'would buy')}")
+                  f"{s.get('skipped') or (('paid, seller answered ' + str((s['bought'].get('reply') or {}).get('status'))) if pay else 'would buy')}")
             time.sleep(0.5)
 
     do(plan["steps"])
