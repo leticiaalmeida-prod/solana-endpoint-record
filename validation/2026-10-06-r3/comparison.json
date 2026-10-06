@@ -1,0 +1,333 @@
+{
+ "claims": [
+  [
+   "N2",
+   7,
+   7,
+   7,
+   0.6456611570247934,
+   1.0,
+   false
+  ],
+  [
+   "N6",
+   3,
+   2,
+   3,
+   0.2076549551264879,
+   0.9385096847238394,
+   false
+  ],
+  [
+   "N1",
+   350,
+   20,
+   20,
+   0.8388698745050667,
+   1.0,
+   true
+  ],
+  [
+   "N3",
+   12,
+   7,
+   12,
+   0.3195073356553728,
+   0.8067425380947535,
+   false
+  ],
+  [
+   "N4",
+   163,
+   20,
+   20,
+   0.8388698745050667,
+   1.0,
+   true
+  ],
+  [
+   "N5",
+   62,
+   20,
+   20,
+   0.8388698745050667,
+   1.0,
+   true
+  ],
+  [
+   "E",
+   26,
+   20,
+   20,
+   0.8388698745050667,
+   1.0,
+   true
+  ],
+  [
+   "D",
+   8,
+   3,
+   8,
+   0.13684175946152105,
+   0.6942621454161981,
+   false
+  ],
+  [
+   "U",
+   104,
+   8,
+   20,
+   0.21880396741419272,
+   0.613422057684794,
+   false
+  ],
+  [
+   "ALIVE",
+   6635,
+   47,
+   50,
+   0.8378265662912299,
+   0.9793854036353695,
+   true
+  ]
+ ],
+ "levels": [
+  [
+   "strict",
+   "L0",
+   163,
+   19,
+   20,
+   0.7638641064874331,
+   0.9911187805671268,
+   false
+  ],
+  [
+   "strict",
+   "L1",
+   204,
+   18,
+   20,
+   0.6989617935882066,
+   0.9721341060158468,
+   false
+  ],
+  [
+   "strict",
+   "L2",
+   552,
+   19,
+   20,
+   0.7638641064874331,
+   0.9911187805671268,
+   false
+  ],
+  [
+   "strict",
+   "L3",
+   6985,
+   49,
+   50,
+   0.8950431352816304,
+   0.9964608319110235,
+   true
+  ],
+  [
+   "lenient",
+   "L0",
+   163,
+   19,
+   20,
+   0.7638641064874331,
+   0.9911187805671268,
+   false
+  ],
+  [
+   "lenient",
+   "L1",
+   204,
+   18,
+   20,
+   0.6989617935882066,
+   0.9721341060158468,
+   false
+  ],
+  [
+   "lenient",
+   "L2",
+   552,
+   19,
+   20,
+   0.7638641064874331,
+   0.9911187805671268,
+   false
+  ],
+  [
+   "lenient",
+   "L3",
+   6985,
+   49,
+   50,
+   0.8950431352816304,
+   0.9964608319110235,
+   true
+  ]
+ ],
+ "disagree": [
+  [
+   "A",
+   "N6",
+   "POST https://cleared.ink/wan/t2v/480p"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://api.aidress.ai/pay/agent_voidfeed_ai"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://api.loopholetape.com/mcp#launches_since#launches_since"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://api.robotsshop.io/v0/live"
+  ],
+  [
+   "A",
+   "N3",
+   "GET https://api.robotsshop.io/v0/swartzpath"
+  ],
+  [
+   "A",
+   "N3",
+   "POST https://api.locus.report/api/locus-fema-events"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://api.mekler.ai/v1/email/domains/check-mail-configuration"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://api.mekler.ai/v1/research/citations/check-source-overlap"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/ability-check"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/people"
+  ],
+  [
+   "A",
+   "D",
+   "POST https://x402.agentutility.ai/text-to-speech"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://www.cultos.dev/services/builder-code-validator"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-house-price-index"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://phion.systems/v1/paid/trust/person-enrichment-evidence"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-capital-projects"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-underground-storage-tanks"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-governing-districts"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-opportunity-zone"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-flood-gauges"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-rcra-handlers"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-radon-zone"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://www.cultos.dev/services/x402-lens"
+  ],
+  [
+   "A",
+   "U",
+   "POST https://api.locus.report/api/locus-flood-premium-context"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "GET https://2s.io/api/property/nyc-deed-history"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "POST https://anytrans.alibaba.gateway-402.com/anytrans/translate/batch"
+  ],
+  [
+   "A",
+   "ALIVE",
+   "POST https://agentbit.app/v1/decode/hex"
+  ],
+  [
+   "B",
+   "L0",
+   "GET https://pay.smartmoney.market/api/fund/{slug}/changes"
+  ],
+  [
+   "B",
+   "L1",
+   "GET https://x402-accelerometer-feed.fly.dev/tokenized-equities/st0x/pulse"
+  ],
+  [
+   "B",
+   "L1",
+   "GET https://crypto.theboredlab.com/v1/base/token/:address/quick"
+  ],
+  [
+   "B",
+   "L2",
+   "POST https://twin.unykorn.org/ai/json-repair"
+  ],
+  [
+   "B",
+   "L3",
+   "POST https://agentbit.app/v1/content/moderate"
+  ]
+ ]
+}
