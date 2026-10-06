@@ -30,6 +30,24 @@ wallet through the PayBox CLI (`use-service`, gateway mode).
 price is over **$0.10**, the seller is not on the approved list (blockrun.ai, parallelmpp.dev, finance.toon.haus,
 api.seerium.xyz, stablejobs.dev), or the batch would pass the budget Leticia approved for it.
 
+## 1b. Accepted vs waiting: does vetting change delivery? (added 2026-10-06, before any purchase in it)
+
+The record's 90% is measured on services that are already in a catalog, so it describes survivors of a filter. This
+part asks whether the filter also predicts delivery, comparing pay.sh's accepted providers with providers still in its
+waiting list (open pull requests, record METHOD.md section 10).
+
+| Group | Population (6 Oct) | One endpoint per provider |
+|---|---|---|
+| Accepted | pay.sh providers with at least one L3 endpoint in the record (snapshot d96e085): 53 | The first L3 endpoint in the listing's order whose price, read by an unpaid request just before buying, is at most $0.10 |
+| Waiting | Waiting-list providers with at least one L3 endpoint (round 4 queue, 18:44Z), trial listings excluded (change 25): 133 | Same rule |
+
+The request sent is the literal agent's request (record METHOD.md section 9: the listing's own example values, `{}`
+for a POST without one). Payment in USDC on Solana from the Solana wallet; PayBox signs and the runner sends, in the
+x402 version the seller asked for (change P3). Each provider is bought three times on three days. Delivery rules as in
+section 2; D1 is read from Solana. Reported per group: delivered X of N providers (95% Wilson interval), persistently
+not delivering (three of three), and the combined chance that a buyer following the listing gets a delivered answer
+(the record's L3 share times the delivered share). Results name unaccepted sellers and stay private.
+
 ## 2. Delivery rules (each paid step)
 
 | # | Rule | Fails when |
