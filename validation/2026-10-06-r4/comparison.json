@@ -1,0 +1,169 @@
+{
+ "kind": "catalog",
+ "levels": [
+  [
+   "strict",
+   "L0",
+   155,
+   40,
+   40,
+   0.9123754607496077,
+   1.0,
+   true
+  ],
+  [
+   "strict",
+   "L1",
+   307,
+   21,
+   40,
+   0.37497106853929735,
+   0.6706477044981831,
+   false
+  ],
+  [
+   "strict",
+   "L2",
+   342,
+   40,
+   40,
+   0.9123754607496077,
+   1.0,
+   true
+  ],
+  [
+   "strict",
+   "L3",
+   7162,
+   50,
+   50,
+   0.9286499658256813,
+   1.0,
+   true
+  ],
+  [
+   "lenient",
+   "L0",
+   155,
+   40,
+   40,
+   0.9123754607496077,
+   1.0,
+   true
+  ],
+  [
+   "lenient",
+   "L1",
+   307,
+   21,
+   40,
+   0.37497106853929735,
+   0.6706477044981831,
+   false
+  ],
+  [
+   "lenient",
+   "L2",
+   342,
+   40,
+   40,
+   0.9123754607496077,
+   1.0,
+   true
+  ],
+  [
+   "lenient",
+   "L3",
+   7162,
+   50,
+   50,
+   0.9286499658256813,
+   1.0,
+   true
+  ]
+ ],
+ "disagree": [
+  [
+   "L1",
+   "POST https://hubvibe-io.com/audit/security"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/token-price/base/:address"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/arbitrum/events/:address"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/polygon/balance/:address"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/polygon/transfers/:address"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/base/transfers/:address"
+  ],
+  [
+   "L1",
+   "POST https://hubvibe-io.com/work/opendata/search"
+  ],
+  [
+   "L1",
+   "POST https://hubvibe-io.com/work/stats/probability"
+  ],
+  [
+   "L1",
+   "GET https://ads.apitoll.cloud/v1/ads/facebook/search"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/arbitrum/call/:address"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/polygon/nonce/:address"
+  ],
+  [
+   "L1",
+   "POST https://hubvibe-io.com/work/search/results"
+  ],
+  [
+   "L1",
+   "POST https://hubvibe-io.com/work/maps/places"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/optimism/tx/:hash"
+  ],
+  [
+   "L1",
+   "POST https://hubvibe-io.com/work/image/generate"
+  ],
+  [
+   "L1",
+   "GET https://news.apitoll.cloud/v1/cointelegraph/news"
+  ],
+  [
+   "L1",
+   "POST https://hubvibe-io.com/work/speech/transcribe"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/bsc/tx/:hash"
+  ],
+  [
+   "L1",
+   "GET https://saylorinnovations.com/api/evm/base/allowance/:address/:address2/:address3"
+  ]
+ ],
+ "mpp": {
+  "both": 3,
+  "ours_only": 0,
+  "theirs_only": 0,
+  "n": 130
+ }
+}
