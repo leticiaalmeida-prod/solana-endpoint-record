@@ -12,16 +12,17 @@ import base64
 import hashlib
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-VERSION = "0.3"
+VERSION = "0.4"
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
-UA = "solana-endpoint-record/0.3 (+https://github.com/leticiaalmeida-prod/solana-endpoint-record)"
+UA = "solana-endpoint-record/0.4 (+https://github.com/leticiaalmeida-prod/solana-endpoint-record)"
 USDC = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 STANDARD_NETWORKS = {"solana", "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"}
 TEST_NETWORKS = {"solana-devnet", "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1"}
@@ -97,6 +98,31 @@ def payment_docs(headers, body):
     return [d for d in docs if isinstance(d, dict)]
 
 
+def mpp_solana(headers):
+    """An MPP challenge (`WWW-Authenticate: Payment ... method="solana"`). Recorded beside the verdict, never in it:
+    the levels are x402 only (METHOD.md change 22)."""
+    return any(k.lower() == "www-authenticate" and v.lstrip().lower().startswith("payment ")
+               and re.search(r'\bmethod\s*=\s*"?solana"?(?=[\s,]|$)', v, re.I) for k, v in headers)
+
+
+def stated_price(xi):
+    """A waiting listing's own price from `x-payment-info.price` (METHOD.md change 21): ("fixed", a) or
+    ("range", lo, hi), hi may be None; None when it states no USD price."""
+    pr = xi.get("price") if isinstance(xi, dict) else None
+    num = lambda v: float(v) if isinstance(v, (int, float)) or (isinstance(v, str) and v.replace(".", "", 1).isdigit()) else None
+    if num(pr) is not None:
+        return ("fixed", num(pr))
+    if not isinstance(pr, dict) or str(pr.get("currency", "USD")).upper() != "USD":
+        return None
+    mode = pr.get("mode")
+    if mode in (None, "fixed") and num(pr.get("amount")) is not None:
+        return ("fixed", num(pr["amount"]))
+    lo = num(pr.get("min", pr.get("minAmount")))
+    if mode in ("dynamic", "variable") and lo is not None:
+        return ("range", lo, num(pr.get("max", pr.get("maxAmount"))))
+    return None
+
+
 def body_kind(body):
     """For a 2xx reply: 'answer', 'error' or 'empty'. Fixed rules, no model."""
     text = body.decode("utf-8", "replace").strip() if isinstance(body, bytes) else str(body or "").strip()
@@ -138,7 +164,14 @@ def compare_with_catalog(ep, main):
         notes.append("catalog's Solana option names a token that is not USDC")
     cat = catalog_mainnet(ep)
     if "pay.sh-queue" in (ep.get("sources") or []):
-        return notes  # METHOD.md section 10: a waiting listing is compared only on a price it states
+        # METHOD.md section 10 and change 21: a waiting listing is compared only on a price it states
+        sp, asked = ep.get("stated_price"), [o["price_usd"] for o in main if o["kind"] == "mainnet" and o["price_usd"] is not None]
+        if sp and asked:
+            if sp[0] == "fixed" and not any(abs(a - sp[1]) < 1e-9 for a in asked):
+                notes.append(f"asks {min(asked)} but the listing states {sp[1]}")
+            elif sp[0] == "range" and not any(a >= sp[1] - 1e-9 and (sp[2] is None or a <= sp[2] + 1e-9) for a in asked):
+                notes.append(f"asks {min(asked)} but the listing states {sp[1]} to {sp[2] if sp[2] is not None else 'any'}")
+        return notes
     if not any(o.get("price_usd") is not None for o in cat):
         notes.append("the listing states no Solana USDC price to compare with")
         return notes

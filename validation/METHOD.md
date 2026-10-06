@@ -228,3 +228,32 @@ failure-side figure is quoted.
 claims and literal levels drawn as in round 2 with seed 20261012 (claims) and 20261013 (levels); the waiting list
 (section 10) drawn with seed 20261011. One blind verifier labels all of them, told to follow redirects (change 18).
 
+### Changes after round 3
+
+Made after round 3 (results in `2026-10-06-r3/RESULTS.md`), before round 4 was drawn. Round 3 stays scored on v0.3.
+
+| # | Change | Why |
+|---|---|---|
+| 20 | OpenAPI references inside the same document (`$ref: "#/..."`) are followed for parameters, their schemas, path items, operations and the request body. References to other files are not read | Round 3: parameters given by `$ref` were skipped (8 waiting-list cases, 1 catalog case) |
+| 21 | A waiting listing states a price when its operation's `x-payment-info.price` is a number, a numeric string, or an object in USD that is `fixed` (or has no mode) with an `amount`, or is `dynamic`/`variable` with a `min` (`minAmount`) and optionally a `max` (`maxAmount`). A fixed price must equal one Solana mainnet USDC amount in the reply; a range must contain one. Anything else states no price | Round 3: a stated $0.85 against an asked $1.05 was not compared (1 case) |
+| 22 | An MPP challenge (`WWW-Authenticate: Payment ...` with `method="solana"`) is recorded beside the level and reported separately. It is not an x402 payment option and never changes a level or verdict | Round 3: the verifier counted an MPP challenge as a Solana option (3 cases); 84 waiting endpoints answer with MPP |
+
+Checker v0.4 implements changes 20–22. Verdicts and checker claims (section 2) are unchanged by them; the literal
+levels (sections 9 and 10) are re-tested in round 4.
+
+**Round 4 (fixed 2026-10-06 before drawing).** Purpose: the failure levels, at sample sizes that can clear the 80% rule
+with up to two disagreements, and the waiting list under v0.4.
+
+- Catalog snapshot: the first data commit on GitHub written by a manual (`workflow_dispatch`) run of checker v0.4,
+  which refreshes catalogs and re-runs the literal agent. Literal levels drawn with seed **20261014**: L0, L1, L2
+  40 each (all if fewer), L3 50.
+- Waiting list: `record/waitlist.py` under v0.4, run once after this commit; its start time is the snapshot. Drawn with
+  seed **20261015**: L0, L1 40 each, L2 all if 40 or fewer (else 40), L3 50. The sample stays private; its SHA-256 is
+  published before verifying.
+- One blind verifier labels both, as in round 3, with section 2 and sections 9–10 (including changes 11–22). Its
+  instructions state the request shape exactly: a POST carries the listing's JSON body or else exactly `{}` with
+  `Content-Type: application/json` (round 3's verifier error, 12 cases).
+- Scored per level with 95% Wilson intervals; the 80% rule (section 7) decides what is quotable. Every disagreement is
+  re-checked and read by hand, and assigned one cause. The as-measured figure is the one quoted.
+- MPP endpoints are counted and reported next to the waiting-list levels, not inside them.
+

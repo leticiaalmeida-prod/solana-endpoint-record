@@ -125,15 +125,30 @@ def openapi_value(p):
     return None
 
 
+def resolve(doc, x, depth=0):
+    """Follow a local `$ref` ("#/components/...") inside the same document (METHOD.md change 20)."""
+    while isinstance(x, dict) and isinstance(x.get("$ref"), str) and depth < 10:
+        ref = x["$ref"]
+        if not ref.startswith("#/"):
+            return {}  # a reference to another file is not read
+        node = doc
+        for part in ref[2:].split("/"):
+            part = part.replace("~1", "/").replace("~0", "~")
+            node = node.get(part) if isinstance(node, dict) else None
+        x, depth = node, depth + 1
+    return x if isinstance(x, dict) else {}
+
+
 def openapi_input(doc, path, method):
     """pay.sh: the listing's inputs for one endpoint, in the same shape as Bazaar's `input`."""
     paths = doc.get("paths") or {}
-    item = next((v for k, v in paths.items() if k.strip("/") == path.strip("/")), {}) or {}
-    op = item.get(method.lower()) or {}
+    item = resolve(doc, next((v for k, v in paths.items() if k.strip("/") == path.strip("/")), {}))
+    op = resolve(doc, item.get(method.lower()))
     out = {"pathParams": {}, "queryParams": {}, "headers": {}, "described": []}
     # Parameters may sit on the path item and on the operation; the operation's win (OpenAPI 3).
-    params = {(p.get("in"), p.get("name")): p for p in (item.get("parameters") or []) + (op.get("parameters") or [])
-              if isinstance(p, dict) and "$ref" not in p}
+    plist = [resolve(doc, p) for p in (item.get("parameters") or []) + (op.get("parameters") or [])]
+    plist = [dict(p, schema=resolve(doc, p.get("schema"))) if "schema" in p else p for p in plist]
+    params = {(p.get("in"), p.get("name")): p for p in plist if p.get("name")}
     for prm in params.values():
         val = openapi_value(prm)
         if prm.get("in") == "path":
@@ -144,7 +159,7 @@ def openapi_input(doc, path, method):
             out["queryParams"][prm["name"]] = val
         elif prm.get("in") == "header" and val is not None:
             out["headers"][prm["name"]] = val
-    body = ((op.get("requestBody") or {}).get("content") or {}).get("application/json") or {}
+    body = (resolve(doc, op.get("requestBody")).get("content") or {}).get("application/json") or {}
     if "example" in body:
         out["body"], out["bodyType"] = body["example"], "json"
     return out

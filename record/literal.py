@@ -15,7 +15,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import quote, urlencode, urlparse, urlunparse
 
-from knock import DATA, PAUSE, SAFE_METHODS, WORKERS, fetch, judge
+from knock import DATA, PAUSE, SAFE_METHODS, WORKERS, fetch, judge, mpp_solana
 
 TEMPLATE = re.compile(r"(?<=/):([A-Za-z_][A-Za-z0-9_]*)|\{([^}/]*)\}|<([^>/]*)>")
 TRANSIENT = ("no answer", "HTTP 429", "HTTP 5")
@@ -99,7 +99,7 @@ def run(ep):
         lv = level(j)
         transient = lv == "L1" and any(n.startswith(TRANSIENT) for n in j["notes"])
         out[mode] = {"level": lv, "seen_once": transient, "url": req["url"], "status": f.get("status"),
-                     "at": f["at"], "notes": j["notes"]}
+                     "at": f["at"], "notes": j["notes"], "mpp_solana": mpp_solana(f.get("headers") or [])}
     return out
 
 

@@ -14,8 +14,8 @@ from concurrent.futures import ThreadPoolExecutor
 
 import yaml
 
-from collect import openapi_input
-from knock import PAUSE, fetch, judge
+from collect import openapi_input, resolve
+from knock import PAUSE, fetch, judge, mpp_solana, stated_price
 from literal import TRANSIENT, build
 from literal import level as literal_level
 
@@ -82,10 +82,12 @@ def endpoints(row):
     for path, ops in (doc.get("paths") or {}).items():
         for method, op in (ops or {}).items():
             if method.upper() in ("GET", "POST"):
-                eps.append({"method": method.upper(), "path": path, "input": openapi_input(doc, path, method.upper())})
+                eps.append({"method": method.upper(), "path": path, "input": openapi_input(doc, path, method.upper()),
+                            "stated_price": stated_price(resolve(doc, op).get("x-payment-info"))})
     for e in fm.get("endpoints") or []:  # legacy inline list
         if isinstance(e, dict) and str(e.get("method", "GET")).upper() in ("GET", "POST"):
-            eps.append({"method": str(e.get("method", "GET")).upper(), "path": e.get("path", ""), "input": {}})
+            eps.append({"method": str(e.get("method", "GET")).upper(), "path": e.get("path", ""), "input": {},
+                        "stated_price": None})
     return base, eps, bool(text), bool(doc) or bool(fm.get("endpoints"))
 
 
@@ -104,8 +106,8 @@ def check(row):
             time.sleep(PAUSE)
         ep = {"id": f"{e['method']} {base}/{e['path'].lstrip('/')}", "method": e["method"],
               "url": f"{base}/{e['path'].lstrip('/')}", "input": e["input"], "sources": ["pay.sh-queue"],
-              "catalog_options": None, "price_usd": None}
-        out = {"id": ep["id"]}
+              "catalog_options": None, "price_usd": None, "stated_price": e["stated_price"]}
+        out = {"id": ep["id"], "stated_price": e["stated_price"]}
         for mode in ("strict", "lenient"):
             req, why = build(ep, lenient=(mode == "lenient"))
             if req is None:
@@ -118,7 +120,8 @@ def check(row):
             j = judge(ep, f)
             lv = level(j)
             out[mode] = {"level": lv, "seen_once": lv == "L1" and any(x.startswith(TRANSIENT) for x in j["notes"]),
-                         "url": req["url"], "status": f.get("status"), "at": f["at"], "notes": j["notes"]}
+                         "url": req["url"], "status": f.get("status"), "at": f["at"], "notes": j["notes"],
+                         "mpp_solana": mpp_solana(f.get("headers") or [])}
         row["endpoints"].append(out)
     return row
 
