@@ -12,7 +12,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,6 +26,9 @@ jobs:
       - name: Check the daily tier
         if: github.event.schedule == '37 4 * * *' || github.event_name == 'workflow_dispatch'
         run: python record/knock.py daily
+      - name: Literal agent (daily; validation/METHOD.md section 9)
+        if: github.event.schedule == '37 4 * * *' || github.event_name == 'workflow_dispatch'
+        run: python record/literal.py
       - name: Check the hourly tier
         run: python record/knock.py hourly
       - name: Re-check the validation sample (until 2026-10-07 05:00 UTC)

@@ -67,6 +67,8 @@ def bazaar():
                 "pay_to": main[0]["pay_to"] if main else None,
                 "network": (main or opts)[0]["network"],
                 "catalog_options": opts,
+                "input": {k: v for k, v in (info.get("input") or {}).items()
+                          if k in ("pathParams", "queryParams", "body", "bodyType", "headers") and v is not None},
                 "payers_30d": q.get("l30DaysUniquePayers"),
                 "calls_30d": q.get("l30DaysTotalCalls"),
             })
@@ -83,6 +85,7 @@ def paysh():
         if not d:
             continue
         base = (d.get("service_url") or "").rstrip("/")
+        doc = d.get("openapi_doc") if isinstance(d.get("openapi_doc"), dict) else {}
         for e in d.get("endpoints") or []:
             prices = [t.get("price_usd") or 0
                       for dim in (e.get("pricing") or {}).get("dimensions") or []
@@ -96,10 +99,50 @@ def paysh():
                 "pay_to": None,  # pay.sh does not publish it; the knock reads it
                 "network": "solana",
                 "catalog_options": None,
+                "input": openapi_input(doc, e.get("path", ""), e.get("method") or "GET"),
                 "payers_30d": None,
                 "calls_30d": None,
             })
     print(f"  pay.sh: {len(out)} endpoints")
+    return out
+
+
+def openapi_value(p):
+    """A parameter's value as the OpenAPI document gives it, or None (validation/METHOD.md section 9)."""
+    for src in (p, p.get("schema") or {}):
+        if "example" in src:
+            return src["example"]
+        ex = src.get("examples")
+        if isinstance(ex, dict) and ex:
+            first = next(iter(ex.values()))
+            return first.get("value") if isinstance(first, dict) else first
+        if isinstance(ex, list) and ex:
+            return ex[0]
+        if "default" in src:
+            return src["default"]
+        if isinstance(src.get("enum"), list) and len(src["enum"]) == 1:
+            return src["enum"][0]
+    return None
+
+
+def openapi_input(doc, path, method):
+    """pay.sh: the listing's inputs for one endpoint, in the same shape as Bazaar's `input`."""
+    paths = doc.get("paths") or {}
+    op = next((v for k, v in paths.items() if k.strip("/") == path.strip("/")), {}).get(method.lower()) or {}
+    out = {"pathParams": {}, "queryParams": {}, "described": []}
+    for prm in op.get("parameters") or []:
+        if "$ref" in prm:
+            continue
+        val = openapi_value(prm)
+        if prm.get("in") == "path":
+            out["described"].append(prm.get("name"))
+            if val is not None:
+                out["pathParams"][prm["name"]] = val
+        elif prm.get("in") == "query" and val is not None:
+            out["queryParams"][prm["name"]] = val
+    body = ((op.get("requestBody") or {}).get("content") or {}).get("application/json") or {}
+    if "example" in body:
+        out["body"], out["bodyType"] = body["example"], "json"
     return out
 
 

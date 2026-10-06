@@ -35,8 +35,11 @@ KEEP = {"hourly": 168, "daily": 30}  # a week of hourly checks, a month of daily
 
 
 def fetch(ep):
-    data = b"{}" if ep["method"] == "POST" else None
-    headers = {"User-Agent": UA, "Accept": "application/json"}
+    if ep.get("body") is not None:
+        data = json.dumps(ep["body"]).encode()
+    else:
+        data = b"{}" if ep["method"] == "POST" else None
+    headers = {"User-Agent": UA, "Accept": "application/json", **(ep.get("headers") or {})}
     if data:
         headers["Content-Type"] = "application/json"
     req = urllib.request.Request(ep["url"], data=data, method=ep["method"], headers=headers)
