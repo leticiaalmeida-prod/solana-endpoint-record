@@ -14,6 +14,8 @@ Every paid Solana endpoint we can find, checked every hour without paying.
 
 ## Verdicts
 
+Verdicts are automatic and can be wrong. If yours is, open an issue and we will fix it.
+
 | Verdict | Meaning |
 |---|---|
 | alive | Answered with a Solana mainnet price |
