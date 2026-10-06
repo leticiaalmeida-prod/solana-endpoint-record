@@ -1,6 +1,6 @@
 {
-"collected_at": "2026-10-06T03:42:33Z",
-"count": 7950,
+"collected_at": "2026-10-06T03:50:36Z",
+"count": 7951,
 "endpoints": [
 {
 "url": "https://stableenrich.dev/api/exa/search",
@@ -18381,6 +18381,24 @@
 "tier": "daily"
 },
 {
+"url": "https://agent-arcade.use.x402atlas.com/twenty-four/daily",
+"method": "GET",
+"seller": "Agent Arcade: Reasoning Games",
+"price_usd": 0.005,
+"pay_to": "ASt6xvRyQ7ntERsmcYVMdLqZvz1GEN8Fzexzq62tXrNQ",
+"network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+"payers_30d": 6,
+"calls_30d": 10,
+"id": "GET https://agent-arcade.use.x402atlas.com/twenty-four/daily",
+"sources": [
+"bazaar"
+],
+"network_standard": true,
+"needs_params": false,
+"free": false,
+"tier": "daily"
+},
+{
 "url": "https://agent402.tools/api/x402-trending",
 "method": "GET",
 "seller": "x402 trending sellers",
@@ -19020,6 +19038,24 @@
 "payers_30d": 6,
 "calls_30d": 6,
 "id": "GET https://x402engine.app/api/crypto/trending",
+"sources": [
+"bazaar"
+],
+"network_standard": true,
+"needs_params": false,
+"free": false,
+"tier": "daily"
+},
+{
+"url": "https://youtube.use.x402atlas.com/transcript",
+"method": "GET",
+"seller": "YouTube Transcript & Captions",
+"price_usd": 0.02,
+"pay_to": "ASt6xvRyQ7ntERsmcYVMdLqZvz1GEN8Fzexzq62tXrNQ",
+"network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+"payers_30d": 6,
+"calls_30d": 11,
+"id": "GET https://youtube.use.x402atlas.com/transcript",
 "sources": [
 "bazaar"
 ],
@@ -24604,7 +24640,6 @@
 "sources": [
 "bazaar"
 ],
-"source": "bazaar",
 "network_standard": true,
 "needs_params": false,
 "free": false,
@@ -116551,6 +116586,25 @@
 "sources": [
 "bazaar"
 ],
+"source": "bazaar",
+"network_standard": true,
+"needs_params": false,
+"free": false,
+"tier": "daily"
+},
+{
+"url": "https://api.vextorium.com/co2-atmosferico-pago",
+"method": "POST",
+"seller": "Vextorium",
+"price_usd": 0.002,
+"pay_to": "HcjfmZLgWRZzwj4deEiS7pewc4KBYSw39mW5nTyt3pz2",
+"network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+"payers_30d": 1,
+"calls_30d": 1,
+"id": "POST https://api.vextorium.com/co2-atmosferico-pago",
+"sources": [
+"bazaar"
+],
 "network_standard": true,
 "needs_params": false,
 "free": false,
@@ -119305,6 +119359,7 @@
 "sources": [
 "bazaar"
 ],
+"source": "bazaar",
 "network_standard": true,
 "needs_params": false,
 "free": false,
@@ -119773,7 +119828,6 @@
 "sources": [
 "bazaar"
 ],
-"source": "bazaar",
 "network_standard": true,
 "needs_params": false,
 "free": false,
@@ -119792,7 +119846,6 @@
 "sources": [
 "bazaar"
 ],
-"source": "bazaar",
 "network_standard": true,
 "needs_params": false,
 "free": false,
@@ -119808,60 +119861,6 @@
 "payers_30d": 1,
 "calls_30d": 2,
 "id": "POST https://api.vextorium.com/pdf-extraer-paginas-pago",
-"sources": [
-"bazaar"
-],
-"network_standard": true,
-"needs_params": false,
-"free": false,
-"tier": "daily"
-},
-{
-"url": "https://api.vextorium.com/pdf-metadatos-pago",
-"method": "POST",
-"seller": "Vextorium",
-"price_usd": 0.004,
-"pay_to": "HcjfmZLgWRZzwj4deEiS7pewc4KBYSw39mW5nTyt3pz2",
-"network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-"payers_30d": 1,
-"calls_30d": 1,
-"id": "POST https://api.vextorium.com/pdf-metadatos-pago",
-"sources": [
-"bazaar"
-],
-"network_standard": true,
-"needs_params": false,
-"free": false,
-"tier": "daily"
-},
-{
-"url": "https://api.vextorium.com/pdf-texto-paginas-pago",
-"method": "POST",
-"seller": "Vextorium",
-"price_usd": 0.004,
-"pay_to": "HcjfmZLgWRZzwj4deEiS7pewc4KBYSw39mW5nTyt3pz2",
-"network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-"payers_30d": 1,
-"calls_30d": 1,
-"id": "POST https://api.vextorium.com/pdf-texto-paginas-pago",
-"sources": [
-"bazaar"
-],
-"network_standard": true,
-"needs_params": false,
-"free": false,
-"tier": "daily"
-},
-{
-"url": "https://api.vextorium.com/pdf-unir-pago",
-"method": "POST",
-"seller": "Vextorium",
-"price_usd": 0.004,
-"pay_to": "HcjfmZLgWRZzwj4deEiS7pewc4KBYSw39mW5nTyt3pz2",
-"network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
-"payers_30d": 1,
-"calls_30d": 1,
-"id": "POST https://api.vextorium.com/pdf-unir-pago",
 "sources": [
 "bazaar"
 ],
@@ -120789,6 +120788,24 @@
 "tier": "daily"
 },
 {
+"url": "https://api.vextorium.com/sanciones-onu-pago",
+"method": "POST",
+"seller": "Vextorium",
+"price_usd": 0.003,
+"pay_to": "HcjfmZLgWRZzwj4deEiS7pewc4KBYSw39mW5nTyt3pz2",
+"network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+"payers_30d": 1,
+"calls_30d": 1,
+"id": "POST https://api.vextorium.com/sanciones-onu-pago",
+"sources": [
+"bazaar"
+],
+"network_standard": true,
+"needs_params": false,
+"free": false,
+"tier": "daily"
+},
+{
 "url": "https://api.vextorium.com/sanciones-recientes-pago",
 "method": "POST",
 "seller": "Vextorium",
@@ -121701,6 +121718,7 @@
 "sources": [
 "bazaar"
 ],
+"source": "bazaar",
 "network_standard": true,
 "needs_params": false,
 "free": false,
@@ -139983,7 +140001,7 @@
 {
 "url": "https://rubric-protocol.com/v1/x402/check-counterparty",
 "method": "POST",
-"seller": "Rubric Protocol",
+"seller": "TenPrint",
 "price_usd": 0.01,
 "pay_to": "GBfJMhGiGJeWDcve1G673hEp8DLmMFomvSEHMzRfmcJu",
 "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
