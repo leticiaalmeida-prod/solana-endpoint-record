@@ -1,6 +1,6 @@
 # Solana Endpoint Record
 
-Every paid Solana endpoint we can find, checked every hour without paying.
+Paid Solana endpoints listed in Coinbase Bazaar and pay.sh, checked without paying.
 
 - **What a check is.** The request an agent sends before paying. A working x402 endpoint answers
   `402 Payment Required` with its price and payment address. We record the answer, the price, where
@@ -14,7 +14,9 @@ Every paid Solana endpoint we can find, checked every hour without paying.
 
 ## Verdicts
 
-Verdicts are automatic and can be wrong. If yours is, open an issue and we will fix it.
+Verdicts are automatic and can be wrong. If yours is, open an issue and we will fix it. A problem seen in fewer
+than 3 of the last 4 checks is shown as "seen once" or as a count, never as settled. How we test the checker's
+accuracy: `validation/METHOD.md`.
 
 | Verdict | Meaning |
 |---|---|

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Solana Endpoint Record</title>
-<meta name="description" content="Every paid Solana endpoint we can find, checked every hour without paying.">
+<meta name="description" content="Paid Solana endpoints listed in Coinbase Bazaar and pay.sh, checked without paying.">
 <style>
   :root {
     --bg: #f7f8fa; --panel: #ffffff; --text: #14171c; --muted: #5c6470; --line: #e3e6eb;
@@ -53,8 +53,8 @@
 <body>
 <main>
   <h1>Solana Endpoint Record</h1>
-  <p>Every paid Solana endpoint we can find, checked every hour without paying: does it answer, what does it charge,
-     where does the money go. Some we also buy, to see whether the answer is real.</p>
+  <p>Paid Solana endpoints listed in Coinbase Bazaar and pay.sh, checked without paying: does it answer, what does it charge,
+     where does the money go. Busy endpoints are checked every hour, the rest once a day.</p>
   <p>Verdicts are automatic and can be wrong. If yours is, <a href="https://github.com/leticiaalmeida-prod/solana-endpoint-record/issues">tell us</a> and we will fix it.</p>
 
   <div class="tiles" id="tiles"></div>
@@ -67,13 +67,14 @@
     <button id="f-prob" aria-pressed="false">Problems only</button>
   </div>
   <div class="wrap"><table>
-    <thead><tr><th>Seller</th><th>Endpoint</th><th>Price</th><th>Payers, 30 days</th><th>Now</th><th>Last 24 checks</th></tr></thead>
+    <thead><tr><th>Seller</th><th>Endpoint</th><th>Price</th><th>Payers, 30 days</th><th>Now</th><th>Recent checks</th></tr></thead>
     <tbody id="rows"></tbody>
   </table></div>
   <div class="more" id="more"></div>
 
   <h2>Paid checks</h2>
-  <p>We pay for one call and read the answer. A call counts as delivered only if the answer is real, not an error dressed as a success.</p>
+  <p>Here we pay for one call and read the answer. A call counts as delivered only if the answer is real, not an error dressed as a success.
+     One so far.</p>
   <div class="wrap"><table>
     <thead><tr><th>When (UTC)</th><th>Seller</th><th>Paid</th><th>What came back</th><th>Verdict</th><th>Transaction</th></tr></thead>
     <tbody id="paid"></tbody>
@@ -89,6 +90,12 @@
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const usd = v => v == null ? "—" : "$" + (v < 0.01 ? v.toFixed(4).replace(/0+$/, "") : v.toFixed(2));
 const PROBLEM = new Set(["warning", "error", "down"]);
+// METHOD.md section 7: a problem is persistent only when seen in at least 3 of the last 4 checks.
+const seen = r => {
+  if (!PROBLEM.has(r.verdict)) return "";
+  const last = [...r.recent].slice(-4), bad = last.filter(c => "wed".includes(c)).length;
+  return `<div class="notes">${last.length < 3 ? "seen once" : bad >= 3 ? `in ${bad} of last ${last.length} checks` : `${bad} of last ${last.length} checks`}</div>`;
+};
 let data, filter = "all", shown = 200;
 
 function render() {
@@ -102,7 +109,7 @@ function render() {
       <td><div class="url">${esc(r.method)} ${esc(r.url)}</div>${r.notes.length ? `<div class="notes">${esc(r.notes.join("; "))}</div>` : ""}</td>
       <td class="num">${usd(r.price ?? r.listed_price)}</td>
       <td class="num">${r.payers_30d ?? "—"}</td>
-      <td class="v ${esc(r.verdict)}">${esc(r.verdict)}</td>
+      <td class="v ${esc(r.verdict)}">${esc(r.verdict)}${seen(r)}</td>
       <td><div class="dots">${[...r.recent].map(c => `<i class="${c}"></i>`).join("")}</div></td>
     </tr>`).join("");
   const more = document.getElementById("more");
