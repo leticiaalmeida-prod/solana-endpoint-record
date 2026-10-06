@@ -17,7 +17,7 @@ from urllib.parse import quote, urlencode, urlparse, urlunparse
 
 from knock import DATA, PAUSE, SAFE_METHODS, WORKERS, fetch, judge
 
-TEMPLATE = re.compile(r":([A-Za-z_][A-Za-z0-9_]*)|\{([^}/]*)\}|<([^>/]*)>")
+TEMPLATE = re.compile(r"(?<=/):([A-Za-z_][A-Za-z0-9_]*)|\{([^}/]*)\}|<([^>/]*)>")
 TRANSIENT = ("no answer", "HTTP 429", "HTTP 5")
 SKIP_HEADERS = {"authorization", "x-payment", "payment-signature", "cookie"}
 
@@ -74,9 +74,10 @@ def build(ep, lenient=False):
 
 def level(j):
     v, notes = j["verdict"], j["notes"]
-    if v == "alive":
-        return "L3"
-    if v == "warning" and any(n.startswith("gave a real answer") for n in notes):
+    if v == "alive" or (v == "warning" and j.get("standard_ok")
+                        and all(n.startswith("network name") for n in notes)):
+        return "L3"  # METHOD.md change 13: a standard option that matches is enough
+    if v == "free" or (v == "warning" and any(n.startswith("gave a real answer") for n in notes)):
         return "served"
     if v == "warning" and not any(n.startswith(("asks for payment", "only accepts test")) for n in notes):
         return "L2"

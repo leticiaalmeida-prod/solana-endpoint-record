@@ -17,6 +17,7 @@ import yaml
 from collect import openapi_input
 from knock import PAUSE, fetch, judge
 from literal import TRANSIENT, build
+from literal import level as literal_level
 
 REPO = "solana-foundation/pay-skills"
 
@@ -89,16 +90,8 @@ def endpoints(row):
 
 
 def level(j):
-    v, notes = j["verdict"], j["notes"]
-    if v == "alive":
-        return "L3"
-    if v == "warning" and any(n.startswith("gave a real answer") for n in notes):
-        return "free"
-    if v == "unclear" and any(n.startswith("gave an answer without asking") for n in notes):
-        return "free"
-    if v == "warning" and not any(n.startswith(("asks for payment", "only accepts test")) for n in notes):
-        return "L2"
-    return "L1"
+    lv = literal_level(j)
+    return "free" if lv == "served" else lv
 
 
 def check(row):

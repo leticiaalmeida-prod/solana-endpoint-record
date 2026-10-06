@@ -128,11 +128,13 @@ def openapi_value(p):
 def openapi_input(doc, path, method):
     """pay.sh: the listing's inputs for one endpoint, in the same shape as Bazaar's `input`."""
     paths = doc.get("paths") or {}
-    op = next((v for k, v in paths.items() if k.strip("/") == path.strip("/")), {}).get(method.lower()) or {}
-    out = {"pathParams": {}, "queryParams": {}, "described": []}
-    for prm in op.get("parameters") or []:
-        if "$ref" in prm:
-            continue
+    item = next((v for k, v in paths.items() if k.strip("/") == path.strip("/")), {}) or {}
+    op = item.get(method.lower()) or {}
+    out = {"pathParams": {}, "queryParams": {}, "headers": {}, "described": []}
+    # Parameters may sit on the path item and on the operation; the operation's win (OpenAPI 3).
+    params = {(p.get("in"), p.get("name")): p for p in (item.get("parameters") or []) + (op.get("parameters") or [])
+              if isinstance(p, dict) and "$ref" not in p}
+    for prm in params.values():
         val = openapi_value(prm)
         if prm.get("in") == "path":
             out["described"].append(prm.get("name"))
@@ -140,6 +142,8 @@ def openapi_input(doc, path, method):
                 out["pathParams"][prm["name"]] = val
         elif prm.get("in") == "query" and val is not None:
             out["queryParams"][prm["name"]] = val
+        elif prm.get("in") == "header" and val is not None:
+            out["headers"][prm["name"]] = val
     body = ((op.get("requestBody") or {}).get("content") or {}).get("application/json") or {}
     if "example" in body:
         out["body"], out["bodyType"] = body["example"], "json"

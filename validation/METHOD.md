@@ -211,3 +211,16 @@ original wording.
 | 8 | D includes DNS failures, which fail in milliseconds rather than after 10 seconds | Verifier ambiguity 8 |
 | 9 | When the v1 body and the v2 header disagree, the union of both is used | Verifier ambiguity 6 |
 | 10 | N4's note no longer says "some wallets cannot pay it" | Untested consequence (section 2) |
+| 11 | An answer without payment whose listing states no price is outside the verdicts ("free"), not U | Round 2: U is defined in section 2 for refusals and error bodies only (4 cases) |
+| 12 | ALIVE and L3 need a listed Solana USDC price to match; a listing that states none is L2 ("states no price") | Section 9's own wording ("matches the listing's price"); round 2, 4 cases |
+| 13 | A reply offering a standard mainnet USDC option that matches is L3 even if it also offers a non-standard name; N4 is still recorded | An agent can pay it correctly; round 2, 1 case |
+| 14 | "Catalog names a token that is not USDC" only when none of the catalog's mainnet options is USDC | Round 2: a catalog listing USDT next to USDC was flagged (5 cases) |
+| 15 | OpenAPI parameters declared on the path item count, as do header parameters with a value | Round 2: path-level parameters were missed (2 cases); a header the listing gives was not sent (1) |
+| 16 | A colon template must start a path segment (`/:name`); `videos:annotate` is a verb | Round 2, 1 case |
+| 17 | An unrecognised Solana network name is not "test only"; it is N4, and with no other mainnet option the reply is L1 | Round 2, 1 case |
+| 18 | Redirects are followed, as ordinary HTTP clients do; the final URL is recorded | Round 2: the two instruments differed on one 301 |
+| 19 | Waiting listings (section 10) are compared only on a price they state | They state no catalog price; change 12 would otherwise mark every one L2 |
+
+Checker v0.3 implements changes 11–19. Under section 7 it is re-tested on a new sample (round 3) before any
+failure-side figure is quoted.
+

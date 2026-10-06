@@ -1,0 +1,32 @@
+{
+ "checker_version": "0.3",
+ "tally": {
+  "s2 agree": 259,
+  "literal agree": 270,
+  "s2 disagree": 2
+ },
+ "disagree": [
+  [
+   "s2",
+   45,
+   [
+    "N3"
+   ],
+   [
+    "U"
+   ],
+   "POST https://api.locus.report/api/locus-fema-events"
+  ],
+  [
+   "s2",
+   193,
+   [
+    "N3"
+   ],
+   [
+    "U"
+   ],
+   "GET https://api.robotsshop.io/v0/live"
+  ]
+ ]
+}

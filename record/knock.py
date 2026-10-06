@@ -18,10 +18,10 @@ import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-VERSION = "0.2"
+VERSION = "0.3"
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
-UA = "solana-endpoint-record/0.2 (+https://github.com/leticiaalmeida-prod/solana-endpoint-record)"
+UA = "solana-endpoint-record/0.3 (+https://github.com/leticiaalmeida-prod/solana-endpoint-record)"
 USDC = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 STANDARD_NETWORKS = {"solana", "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"}
 TEST_NETWORKS = {"solana-devnet", "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1"}
@@ -131,12 +131,14 @@ def compare_with_catalog(ep, main):
     got_to = {o["pay_to"] for o in main if o["kind"] == "mainnet"}
     if cat_to and got_to and not cat_to & got_to:
         notes.append("payment address differs from the catalog")
-    if any(o["kind"] == "mainnet" and o["asset"] != USDC for o in ep.get("catalog_options") or []):
+    cat_main = [o for o in ep.get("catalog_options") or [] if o["kind"] == "mainnet"]
+    if cat_main and not any(o["asset"] == USDC for o in cat_main):
         notes.append("catalog's Solana option names a token that is not USDC")
     cat = catalog_mainnet(ep)
-    if not cat:
-        if ep.get("catalog_options"):
-            notes.append("catalog lists no standard Solana mainnet USDC option to compare with")
+    if "pay.sh-queue" in (ep.get("sources") or []):
+        return notes  # METHOD.md section 10: a waiting listing is compared only on a price it states
+    if not any(o.get("price_usd") is not None for o in cat):
+        notes.append("the listing states no Solana USDC price to compare with")
         return notes
     asked = {round(o["price_usd"], 9) for o in main if o["kind"] == "mainnet" and o["price_usd"] is not None}
     listed = {round(o["price_usd"], 9) for o in cat if o["price_usd"] is not None}
@@ -146,7 +148,7 @@ def compare_with_catalog(ep, main):
 
 
 def judge(ep, f):
-    """Turn one fetch into a verdict and notes. Verdicts: alive, warning, unclear, error, down."""
+    """Turn one fetch into a verdict and notes. Verdicts: alive, warning, unclear, free, error, down."""
     s = f.get("status")
     if s is None:
         return {"verdict": "down", "notes": [f"no answer within {TIMEOUT} s ({f.get('error', 'error')})"]}
@@ -161,14 +163,20 @@ def judge(ep, f):
             return {"verdict": "warning", "notes": ["asks for payment but offers no Solana option"]}
         main = [o for o in opts if o["kind"] in ("mainnet", "loose-mainnet")]
         if not main:
-            return {"verdict": "warning", "notes": ["only accepts test-network money"]}
+            if all(o["kind"] == "test" for o in opts):
+                return {"verdict": "warning", "notes": ["only accepts test-network money"]}
+            names = ", ".join(sorted({o["network"] for o in opts if o["kind"] == "unknown"}))
+            return {"verdict": "warning", "notes": [f"network name '{names}' is not recognised; offers no Solana mainnet option"]}
         notes = [f"network name '{n}' is not one of the two standard names"
                  for n in sorted({o["network"] for o in opts if o["kind"] in ("loose-mainnet", "unknown")})]
         if not any(o["asset"] == USDC for o in main):
             notes.append("Solana option is not priced in USDC")
-        notes += compare_with_catalog(ep, main)
+        cat_notes = compare_with_catalog(ep, main)
+        notes += cat_notes
         prices = [o["price_usd"] for o in main if o["price_usd"] is not None]
-        return {"verdict": "warning" if notes else "alive", "notes": notes,
+        # An agent can pay correctly if a standard mainnet USDC option exists and nothing but naming is off.
+        standard_ok = any(o["kind"] == "mainnet" and o["asset"] == USDC for o in main) and not cat_notes
+        return {"verdict": "warning" if notes else "alive", "notes": notes, "standard_ok": standard_ok,
                 "pay_to": main[0]["pay_to"], "price_usd": min(prices) if prices else None}
 
     if 200 <= s < 300:
@@ -178,7 +186,7 @@ def judge(ep, f):
             return {"verdict": "unclear", "notes": [f"HTTP {s} with {what} in the body, without asking for payment"]}
         if any(o["price_usd"] for o in catalog_mainnet(ep)):
             return {"verdict": "warning", "notes": ["gave a real answer without asking for payment, though the catalog lists a price"]}
-        return {"verdict": "unclear", "notes": ["gave an answer without asking for payment; the catalog price is unknown or zero"]}
+        return {"verdict": "free", "notes": ["gave an answer without asking for payment; the listing states no price"]}
 
     if ep["method"] == "POST" and s in (400, 422):
         return {"verdict": "unclear", "notes": [f"HTTP {s}: refused our empty test request before asking for payment"]}
