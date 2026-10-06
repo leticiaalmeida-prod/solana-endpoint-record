@@ -1,0 +1,2418 @@
+{
+ "checker_version": "0.2",
+ "tally": {
+  "agree": 144,
+  "disagree": 6,
+  "skipped": 39
+ },
+ "rows": [
+  {
+   "n": "1",
+   "id": "POST https://quantum-artificer.surewhynot.app/v1/math/numerical",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "2",
+   "id": "GET https://api.truthbear.co/gauge/esgfund-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "3",
+   "id": "POST https://agent402.tools/api/a2a-card-validate",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "4",
+   "id": "GET https://api.prereason.com/api/btc",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.02 but the catalog says 0.01"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "5",
+   "id": "GET https://api.xynaptic.io/v1/security-risk",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "6",
+   "id": "GET https://agora-x402-production.up.railway.app/fr/entreprises",
+   "checker": [
+    "N1",
+    "N2"
+   ],
+   "indep": [
+    "N1",
+    "N2"
+   ],
+   "agree": true,
+   "notes": [
+    "payment address differs from the catalog",
+    "asks 0.004 but the catalog says 0.01"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "7",
+   "id": "GET https://api.truthbear.co/gauge/chokepoint-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "8",
+   "id": "POST https://x402.agentutility.ai/product-search",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "9",
+   "id": "POST https://openai.mm.family/x402/v1/models/gpt-6-astra/chat/completions",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.00181 but the catalog says 0.001"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "10",
+   "id": "POST https://api.locus.report/api/locus-fema-events",
+   "checker": [
+    "N3"
+   ],
+   "indep": [],
+   "agree": false,
+   "notes": [
+    "gave a real answer without asking for payment, though the catalog lists a price"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "11",
+   "id": "POST https://x402.agentutility.ai/hacker-news-search",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "12",
+   "id": "GET https://api.truthbear.co/gauge/stablecoin-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "13",
+   "id": "GET https://apexfaucet.xyz/api/x402/candles/:mint",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "14",
+   "id": "POST https://web-production-220a3.up.railway.app/agentic/call/fair_verify",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "15",
+   "id": "POST https://sol.mapleai.shop/prepaid/codes/auto",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.009 but the catalog says 0.008"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "16",
+   "id": "POST https://x402.agentutility.ai/amortization-schedule",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "17",
+   "id": "GET https://api.x402node.dev/market/overview",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "18",
+   "id": "POST https://sol.mapleai.shop/api/v1/images/generations",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.002 but the catalog says 0.021"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "19",
+   "id": "GET https://bob.assimilatethis.com/extract",
+   "checker": [
+    "N2"
+   ],
+   "indep": [
+    "N2"
+   ],
+   "agree": true,
+   "notes": [
+    "payment address differs from the catalog"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "20",
+   "id": "GET https://api.xynaptic.io/v1/crypto-wallet-health",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "21",
+   "id": "POST https://www.cultos.dev/services/builder-code-validator",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "22",
+   "id": "GET https://pay.edge-agents.ai/v1/services/macro-sg-gdp-per-capita-growth",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "23",
+   "id": "POST https://phion.systems/v1/paid/trust/contact-enrichment-evidence",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 422: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "24",
+   "id": "POST https://agent402.tools/api/moving-average",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "25",
+   "id": "POST https://openai.mm.family/x402/v1/models/chat-latest/chat/completions",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.002068 but the catalog says 0.001"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "26",
+   "id": "GET https://47620.xyz/x/polygon/token-report/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "27",
+   "id": "POST https://api.glianalabs.com/x402/seedance-2.5",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "28",
+   "id": "POST https://agent402.tools/api/fc-cast",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "29",
+   "id": "GET https://saylorinnovations.com/api/base/token/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "30",
+   "id": "POST https://x402.agentutility.ai/product-description",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "31",
+   "id": "GET https://whaletape.xyz/pulse",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.05 but the catalog says 0.01"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "32",
+   "id": "GET https://saylorinnovations.com/api/history/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "33",
+   "id": "GET https://api.truthbear.co/gauge/carbon-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "34",
+   "id": "POST https://api.vextorium.com/evm-transaccion-pago",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "35",
+   "id": "POST https://api.bitrefill.com/x402/invoice/pay",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "36",
+   "id": "GET https://api.xynaptic.io/v1/artisan-couvreur",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "37",
+   "id": "GET https://api.xynaptic.io/v1/skill-supplier-due-diligence",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "38",
+   "id": "POST https://api.nansen.ai/api/v1/prediction-market/position-detail",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [],
+   "agree": false,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "39",
+   "id": "POST https://svm402.com/batch/analyze",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "40",
+   "id": "GET https://generativelanguage.google.gateway-402.com/v1beta/models",
+   "checker": [],
+   "indep": [],
+   "agree": true,
+   "notes": [
+    "gave an answer without asking for payment; the catalog price is unknown or zero"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "41",
+   "id": "POST https://stableupload.dev/api/upload",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 2.0 but the catalog says 0.005"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "42",
+   "id": "POST https://conc-exe.xyz/api/concierge-intel-tvl",
+   "checker": [],
+   "indep": [],
+   "agree": true,
+   "notes": [
+    "asks for payment but gives no payment details"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "43",
+   "id": "POST https://agent402.tools/api/skill/wallet-audit",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "44",
+   "id": "GET https://saylorinnovations.com/api/evm/arbitrum/:chain",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "45",
+   "id": "GET https://apexfaucet.xyz/api/x402/base-exit-check/:token",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "46",
+   "id": "GET https://api.truthbear.co/gauge/nas-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "47",
+   "id": "POST https://agent402.tools/api/perp-dex-limits",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "48",
+   "id": "POST https://api.mekler.ai/v1/email/domains/check-mail-configuration",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "49",
+   "id": "GET https://crypto.theboredlab.com/v1/base/token/:address/quick",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "50",
+   "id": "POST https://escrowpulse.waltsoft.net/v1/escrow/:id/release",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "51",
+   "id": "POST https://api.locus.report/api/locus-capital-projects",
+   "checker": [],
+   "indep": [],
+   "agree": true,
+   "notes": [
+    "HTTP 200 with an error in the body, without asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "52",
+   "id": "POST https://www.cultos.dev/services/dockerfile-audit",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "53",
+   "id": "POST https://twin.unykorn.org/evm-gas-price",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "54",
+   "id": "GET https://saylorinnovations.com/api/evm/arbitrum/transfers/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "55",
+   "id": "GET https://api.cryptoetfsentinel.com/v1/issuers/comment-letters",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "56",
+   "id": "GET https://apexfaucet.xyz/api/x402/exit-check/:mint",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "57",
+   "id": "GET https://saylorinnovations.com/api/country/:country",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "58",
+   "id": "GET https://47620.xyz/x/base/should-pay/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "59",
+   "id": "POST https://phion.systems/v1/paid/trust/dependency-provenance-assessment",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "60",
+   "id": "GET https://saylorinnovations.com/api/evm/polygon/nonce/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "61",
+   "id": "POST https://agentbit.app/v1/finance/fx",
+   "checker": [
+    "D"
+   ],
+   "indep": [
+    "D"
+   ],
+   "agree": true,
+   "notes": [
+    "no answer within 10 s (Connection timed out after 10006 milliseconds)"
+   ],
+   "verdict": "down"
+  },
+  {
+   "n": "62",
+   "id": "POST https://grov.fun/api/solana/tiktoksaves",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "63",
+   "id": "POST https://agents.allium.so/api/v1/explorer/queries/run-async",
+   "checker": [
+    "N2"
+   ],
+   "indep": [
+    "N2"
+   ],
+   "agree": true,
+   "notes": [
+    "payment address differs from the catalog"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "64",
+   "id": "POST https://openai.mm.family/x402/v1/models/gpt-5.5/chat/completions",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.001284 but the catalog says 0.001"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "65",
+   "id": "GET https://api.x402node.dev/crypto/convert/usdc/usd/usdc-usd",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "66",
+   "id": "POST https://api.vextorium.com/v1/protocols-by-category",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "67",
+   "id": "GET https://api.truthbear.co/gauge/agri-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "68",
+   "id": "GET https://api.xynaptic.io/v1/security-filings",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "69",
+   "id": "GET https://api.xynaptic.io/v1/ai-bank",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "70",
+   "id": "GET https://api.xynaptic.io/v1/company-monitor",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "71",
+   "id": "GET https://api.truthbear.co/gauge/calibrated",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "72",
+   "id": "GET https://47620.xyz/x/should-pay/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "73",
+   "id": "GET https://api.prereason.com/api/cross/breadth",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.03 but the catalog says 0.02"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "74",
+   "id": "POST https://api.vextorium.com/v1/agent-readiness",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "75",
+   "id": "POST https://api.vextorium.com/info-red-pago",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "76",
+   "id": "POST https://api.munition.io/v1/serper/news",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "77",
+   "id": "GET https://agoraverify.com/finance/contrepartie",
+   "checker": [
+    "N1",
+    "N2"
+   ],
+   "indep": [
+    "N1",
+    "N2"
+   ],
+   "agree": true,
+   "notes": [
+    "payment address differs from the catalog",
+    "asks 0.015 but the catalog says 0.08"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "78",
+   "id": "GET https://api.syntalic.com/v1/analyst/category-summary",
+   "checker": [
+    "E"
+   ],
+   "indep": [
+    "E"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400"
+   ],
+   "verdict": "error"
+  },
+  {
+   "n": "79",
+   "id": "POST https://arn-x402-payguard-payment-security.rajdeep-dutta-in.workers.dev/preflight",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "80",
+   "id": "POST https://agents.allium.so/api/v1/developer/wallet/balances/history",
+   "checker": [
+    "N2"
+   ],
+   "indep": [
+    "N2"
+   ],
+   "agree": true,
+   "notes": [
+    "payment address differs from the catalog"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "81",
+   "id": "GET https://47620.xyz/x/account-summary/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "82",
+   "id": "GET https://2s.io/api/medical/drug-status",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "83",
+   "id": "POST https://api.vextorium.com/imagen-metadatos-pago",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "84",
+   "id": "POST https://hubvibe-io.com/work/chain/address",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "85",
+   "id": "GET https://api.syntalic.com/v1/analyst/retailer-index",
+   "checker": [
+    "E"
+   ],
+   "indep": [
+    "E"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400"
+   ],
+   "verdict": "error"
+  },
+  {
+   "n": "86",
+   "id": "GET https://api.x402node.dev/prices/token",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "87",
+   "id": "POST https://api.vextorium.com/v1/solana-network",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "88",
+   "id": "GET https://47620.xyz/x/solana-fac/should-pay/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "89",
+   "id": "POST https://api.arkm.com/x402/polymarket/activity",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [],
+   "agree": false,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "90",
+   "id": "GET https://api.seerium.xyz/v1/dex/market-brief",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.1 but the catalog says 0.001"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "91",
+   "id": "GET https://pay.brianbooms.com/api/v1/data/joke",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:5eykt4UsFv8P8NJdTREpYbfj1W7N2H4' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "92",
+   "id": "GET https://api.xynaptic.io/v1/industrial-supply",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "93",
+   "id": "POST https://quantum-artificer.surewhynot.app/v1/physics/solve",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "94",
+   "id": "POST https://agdata.shveik.dev/x402/instagram",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.0215 but the catalog says 0.0647"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "95",
+   "id": "GET https://47620.xyz/x/solana-fac/tx-status/:solana_tx",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "96",
+   "id": "GET https://api.xynaptic.io/v1/news-tech",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "97",
+   "id": "GET https://47620.xyz/x/tx-status/:solana_tx",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "98",
+   "id": "GET https://api.xynaptic.io/v1/company-news",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "99",
+   "id": "GET https://api.truthbear.co/gauge/earthquake-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "100",
+   "id": "GET https://apexfaucet.xyz/api/x402/volume-check/:mint",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "101",
+   "id": "POST https://api.vextorium.com/v1/eth-burn",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "102",
+   "id": "GET https://47620.xyz/x/base/whale-radar/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "103",
+   "id": "GET https://47620.xyz/x/risk/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "104",
+   "id": "POST https://lumierepaycheck.org/v1/plans/business",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "105",
+   "id": "GET https://api.seerium.xyz/v1/dex/scan",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.1 but the catalog says 0.001"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "106",
+   "id": "GET https://api.xynaptic.io/v1/security-fundamentals",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "107",
+   "id": "GET https://apexfaucet.xyz/api/x402/trades/:mint",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "108",
+   "id": "GET https://api.truthbear.co/gauge/biodiversity-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "109",
+   "id": "GET https://apexfaucet.xyz/api/x402/exit-check/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "110",
+   "id": "GET https://api.xynaptic.io/v1/notam-brief",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "111",
+   "id": "GET https://saylorinnovations.com/api/narrative/:mint",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "112",
+   "id": "POST https://x402.agentutility.ai/blog-header-image-generate",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "113",
+   "id": "POST https://agent402.tools/api/sol-trending",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "114",
+   "id": "GET https://api.xynaptic.io/v1/company-financial",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "115",
+   "id": "GET https://apexfaucet.xyz/api/x402/token/:mint",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "116",
+   "id": "GET https://api.truthbear.co/stablecoin-deaths",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "117",
+   "id": "POST https://agentbit.app/v1/ai/ask",
+   "checker": [
+    "D"
+   ],
+   "indep": [
+    "D"
+   ],
+   "agree": true,
+   "notes": [
+    "no answer within 10 s (Connection timed out after 10006 milliseconds)"
+   ],
+   "verdict": "down"
+  },
+  {
+   "n": "118",
+   "id": "GET https://marketdata.use.x402atlas.com/insider-trades",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "119",
+   "id": "POST https://evidence.guildpilot.app/v1/extract",
+   "checker": [
+    "N6"
+   ],
+   "indep": [
+    "N4",
+    "N6"
+   ],
+   "agree": false,
+   "notes": [
+    "only accepts test-network money"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "120",
+   "id": "GET https://47620.xyz/x/crypto/deep/SOL",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "121",
+   "id": "GET https://api.truthbear.co/gauge/border-wait-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "122",
+   "id": "GET https://crypto.theboredlab.com/v1/base/token/:address/verdict",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "123",
+   "id": "GET https://saylorinnovations.com/api/stocks/quote/:symbol",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "124",
+   "id": "GET https://api.syntalic.com/v1/analyst/price-dispersion",
+   "checker": [
+    "E"
+   ],
+   "indep": [
+    "E"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400"
+   ],
+   "verdict": "error"
+  },
+  {
+   "n": "125",
+   "id": "GET https://47620.xyz/x/polygon/should-pay/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "126",
+   "id": "GET https://agent402.tools/api/b20-memos",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "127",
+   "id": "GET https://api.truthbear.co/gauge/strata",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "128",
+   "id": "POST https://api.vextorium.com/evm-suministro-pago",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "129",
+   "id": "POST https://cleared.ink/wan/t2v/480p",
+   "checker": [
+    "N6"
+   ],
+   "indep": [
+    "N4",
+    "N6"
+   ],
+   "agree": false,
+   "notes": [
+    "only accepts test-network money"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "130",
+   "id": "GET https://api.truthbear.co/gauge/region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "131",
+   "id": "GET https://api.truthbear.co/gauge/meddevice-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "132",
+   "id": "POST https://agents.ai-rook.com/api/summarize",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "133",
+   "id": "POST https://api.mekler.ai/v1/web/pages/extract-static-content",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "134",
+   "id": "GET https://readx.sh/api/:name",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "ALIVE"
+   ]
+  },
+  {
+   "n": "135",
+   "id": "POST https://api.vextorium.com/cabeceras-seguridad-pago",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "136",
+   "id": "GET https://api.sitecheck-api.workers.dev/api/audit",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "137",
+   "id": "GET https://api.xynaptic.io/v1/crypto-deep-trading-analysis",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "138",
+   "id": "GET https://api.truthbear.co/gauge/ruler",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "139",
+   "id": "GET https://api.truthbear.co/gauge/macro-reconcile-full",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "140",
+   "id": "GET https://47620.xyz/x/solana-fac/risk/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "141",
+   "id": "GET https://api.losbeto.xyz/equity-dossier",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "142",
+   "id": "GET https://api.truthbear.co/gauge/rwa-region",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "143",
+   "id": "GET https://api.losbeto.xyz/whale-alert",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "144",
+   "id": "GET https://47620.xyz/x/solana-fac/whale-radar/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "145",
+   "id": "GET https://api.xynaptic.io/v1/crypto-risk",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "146",
+   "id": "GET https://api.urbangametheory.xyz/agent/oracle/facts",
+   "checker": [
+    "N6"
+   ],
+   "indep": [
+    "N4",
+    "N6"
+   ],
+   "agree": false,
+   "notes": [
+    "only accepts test-network money"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "147",
+   "id": "GET https://saylorinnovations.com/api/evm/bsc/allowance/:address/:address2/:address3",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "148",
+   "id": "POST https://x402.agentutility.ai/exchange-rates",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "149",
+   "id": "POST https://agent402.tools/api/pdf-rotate",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "150",
+   "id": "GET https://api.syntalic.com/v1/shopper/deal-finder",
+   "checker": [
+    "E"
+   ],
+   "indep": [
+    "E"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400"
+   ],
+   "verdict": "error"
+  },
+  {
+   "n": "151",
+   "id": "GET https://api.truthbear.co/trust/scorecard",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "152",
+   "id": "POST https://netintel.dev/text-summarize",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "153",
+   "id": "GET https://api.xynaptic.io/v1/crypto-fear-greed",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "154",
+   "id": "GET https://chain-analyzer.com/api/v1/x402/token/ethereum/:address/peg-status",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "155",
+   "id": "POST https://api.locus.report/api/locus-flood-zone",
+   "checker": [],
+   "indep": [],
+   "agree": true,
+   "notes": [
+    "HTTP 200 with an error in the body, without asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "156",
+   "id": "POST https://twin.unykorn.org/prove",
+   "checker": [
+    "N2"
+   ],
+   "indep": [
+    "N2"
+   ],
+   "agree": true,
+   "notes": [
+    "payment address differs from the catalog",
+    "catalog's Solana option names a token that is not USDC",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "157",
+   "id": "POST https://artifact-inspector.use.x402atlas.com/certificate",
+   "checker": [
+    "U"
+   ],
+   "indep": [
+    "U"
+   ],
+   "agree": true,
+   "notes": [
+    "HTTP 400: refused our empty test request before asking for payment"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "158",
+   "id": "GET https://2s.io/api/weather/forecast",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "159",
+   "id": "POST https://ppu43fkyhimq5fiqpmo42eh5ri0yypid.lambda-url.us-east-1.on.aws/fatFireCalculator",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "160",
+   "id": "GET https://api.truthbear.co/mcp/server",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "161",
+   "id": "POST https://agent402.tools/api/skill/fraud-signals",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "162",
+   "id": "GET https://47620.xyz/x/solana-fac/token-liquidity/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "163",
+   "id": "GET https://pay.brianbooms.com/api/v1/data/id-generate",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:5eykt4UsFv8P8NJdTREpYbfj1W7N2H4' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "164",
+   "id": "POST https://api.seerium.xyz/v1/opportunities/ranked",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.1 but the catalog says 0.001"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "165",
+   "id": "GET https://apexfaucet.xyz/api/x402/holders/:mint",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "D"
+   ]
+  },
+  {
+   "n": "166",
+   "id": "GET https://bob.assimilatethis.com/search",
+   "checker": [
+    "N2"
+   ],
+   "indep": [
+    "N2"
+   ],
+   "agree": true,
+   "notes": [
+    "payment address differs from the catalog"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "167",
+   "id": "GET https://api.xynaptic.io/v1/artisan-electricien",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "168",
+   "id": "GET https://pay.edge-agents.ai/v1/services/macro-in-capital-formation",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "169",
+   "id": "POST https://agent402.tools/v1/metered/gemini",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.001 but the catalog says 0.001885"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "170",
+   "id": "GET https://x402.dtelecom.org/v1/pricing",
+   "checker": [],
+   "indep": [],
+   "agree": true,
+   "notes": [
+    "gave an answer without asking for payment; the catalog price is unknown or zero"
+   ],
+   "verdict": "unclear"
+  },
+  {
+   "n": "171",
+   "id": "GET https://api.xynaptic.io/v1/energy-demand",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "172",
+   "id": "GET https://api.xynaptic.io/v1/insurance-premium",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:mainnet' is not one of the two standard names"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "173",
+   "id": "GET https://saylorinnovations.com/api/evm/optimism/transfers/:address",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "174",
+   "id": "GET https://api.marketintelligenceapi.com/api/v1/rates/tokenized-treasuries",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "175",
+   "id": "GET https://pro-api.coingecko.com/api/v3/x402/onchain/simple/networks/arbitrum/token_price/probe",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "176",
+   "id": "GET https://pay.brianbooms.com/api/v1/data/fortune",
+   "checker": [
+    "N4"
+   ],
+   "indep": [
+    "N4"
+   ],
+   "agree": true,
+   "notes": [
+    "network name 'solana:5eykt4UsFv8P8NJdTREpYbfj1W7N2H4' is not one of the two standard names",
+    "catalog lists no standard Solana mainnet USDC option to compare with"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "177",
+   "id": "GET https://stockwaves.net/api/dealer",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "178",
+   "id": "GET https://agent402.tools/api/fred-release-calendar",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "179",
+   "id": "GET https://saylorinnovations.com/api/web/domain/:domain",
+   "result": "skipped (placeholder URL)",
+   "indep": [
+    "E"
+   ]
+  },
+  {
+   "n": "180",
+   "id": "POST https://lumierepaycheck.org/v1/plans/builder",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "181",
+   "id": "GET https://ichimoku-signal.onrender.com/scan",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.1 but the catalog says 0.25"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "182",
+   "id": "GET https://api.truthbear.co/gauge/precip",
+   "checker": [
+    "N5"
+   ],
+   "indep": [
+    "N5"
+   ],
+   "agree": true,
+   "notes": [
+    "asks for payment but offers no Solana option"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "183",
+   "id": "POST https://x402.agentutility.ai/email-verify-api",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "184",
+   "id": "POST https://x402.agentutility.ai/flux-2-pro",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "185",
+   "id": "GET https://47620.xyz/x/solana-fac/account-age/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "186",
+   "id": "GET https://aayatai.com/search/answer",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.015 but the catalog says 0.03"
+   ],
+   "verdict": "warning"
+  },
+  {
+   "n": "187",
+   "id": "GET https://47620.xyz/x/decision-report/:solana_address",
+   "result": "skipped (placeholder URL)",
+   "indep": []
+  },
+  {
+   "n": "188",
+   "id": "GET https://pay.edge-agents.ai/v1/services/macro-uk-central-government-debt",
+   "checker": [
+    "ALIVE"
+   ],
+   "indep": [
+    "ALIVE"
+   ],
+   "agree": true,
+   "notes": [],
+   "verdict": "alive"
+  },
+  {
+   "n": "189",
+   "id": "POST https://agents.dexl.io/v1/tools/summarize-text",
+   "checker": [
+    "N1"
+   ],
+   "indep": [
+    "N1"
+   ],
+   "agree": true,
+   "notes": [
+    "asks 0.001 but the catalog says 0.01"
+   ],
+   "verdict": "warning"
+  }
+ ]
+}

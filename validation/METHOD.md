@@ -116,4 +116,18 @@ For ALIVE: problems missed in X of 50, with a 95% Wilson interval.
 
 ## Changes after 2026-10-06
 
-None yet.
+Made after round 1 (results in `2026-10-06/RESULTS.md`). Each applies from round 2 on; round 1 is scored on the
+original wording.
+
+| # | Change | Why |
+|---|---|---|
+| 1 | ALIVE: "nothing in N1–N7" reads "nothing in N1–N6" | N7 never existed; a typo the verifier flagged |
+| 2 | ALIVE: the address must match only where the catalog lists one (pay.sh lists none) | Round 1 left Nansen and Arkham undecidable |
+| 3 | N4 applies to mainnet and unrecognised identifiers, not test networks (test networks are N6) | The literal wording made every N6 also an N4 |
+| 4 | N2 compares mainnet addresses whatever the asset | A catalog token typo (case 156) should not hide an address mismatch |
+| 5 | URLs with path templates (`:name`, `{id}`, `<mint>`) are not endpoints and are not checked | 39 of 189 sampled cases were templates; they produced false "free", "error" and "down" claims |
+| 6 | An HTTP 2xx without payment is judged by its body: an error or empty body is UNCLEAR, not N3 | 18 of 20 round-1 "free" claims were error or placeholder bodies |
+| 7 | A 402 with no payment details at all is its own note, not N5 | Case conc-exe.xyz |
+| 8 | D includes DNS failures, which fail in milliseconds rather than after 10 seconds | Verifier ambiguity 8 |
+| 9 | When the v1 body and the v2 header disagree, the union of both is used | Verifier ambiguity 6 |
+| 10 | N4's note no longer says "some wallets cannot pay it" | Untested consequence (section 2) |

@@ -6,8 +6,8 @@ Appends one line per case to <sample dir>/repeats.jsonl. Stops doing anything af
 import json, os, socket, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "record"))
-from knock import knock, verdict  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from checker_v01 import knock, verdict  # noqa: E402  (frozen v0.1: the instrument under test)
 
 WINDOW_END = "2026-10-07T05:00:00Z"
 d, vantage = sys.argv[1], sys.argv[2]

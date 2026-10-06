@@ -7,8 +7,11 @@ import json
 import os
 import sys
 import time
+import re
 import urllib.request
 from urllib.parse import urlparse
+
+from knock import USDC, solana_options
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
@@ -19,7 +22,8 @@ PAYSH = "https://pay.sh/api"
 
 # x402 v1 used "solana"; v2 uses CAIP-2 with the first 32 characters of the mainnet genesis hash.
 STANDARD_NETWORKS = {"solana", "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"}
-USDC_DECIMALS = 6
+# A path segment like ":address", "{id}" or "<mint>" is a template, not a real endpoint.
+PLACEHOLDER = re.compile(r"/:[A-Za-z_]|\{[^}]*\}|<[^>]*>")
 
 # An endpoint is checked hourly if people actually pay it; the rest once a day.
 HOURLY_MIN_PAYERS = 10
@@ -38,10 +42,6 @@ def get_json(url, timeout=30, tries=3):
             time.sleep(2 * (i + 1))
 
 
-def is_solana(network):
-    return str(network or "").lower().startswith("solana")
-
-
 def bazaar():
     out, offset = [], 0
     while True:
@@ -50,11 +50,11 @@ def bazaar():
         if not items:
             break
         for it in items:
-            sol = [a for a in it.get("accepts") or [] if is_solana(a.get("network"))]
-            if not sol:
+            opts = solana_options(it.get("accepts"))
+            if not opts:
                 continue
-            a = sol[0]
-            amount = a.get("amount") or a.get("maxAmountRequired")
+            main = [o for o in opts if o["kind"] == "mainnet" and o["asset"] == USDC]
+            prices = [o["price_usd"] for o in main if o["price_usd"] is not None]
             info = ((it.get("extensions") or {}).get("bazaar") or {}).get("info") or {}
             method = ((info.get("input") or {}).get("method") or "GET").upper()
             q = it.get("quality") or {}
@@ -63,9 +63,10 @@ def bazaar():
                 "method": method,
                 "source": "bazaar",
                 "seller": it.get("serviceName") or urlparse(it["resource"]).netloc,
-                "price_usd": int(amount) / 10 ** USDC_DECIMALS if amount and str(amount).isdigit() else None,
-                "pay_to": a.get("payTo"),
-                "network": a.get("network"),
+                "price_usd": min(prices) if prices else None,
+                "pay_to": main[0]["pay_to"] if main else None,
+                "network": (main or opts)[0]["network"],
+                "catalog_options": opts,
                 "payers_30d": q.get("l30DaysUniquePayers"),
                 "calls_30d": q.get("l30DaysTotalCalls"),
             })
@@ -94,6 +95,7 @@ def paysh():
                 "price_usd": max(prices) if prices else None,
                 "pay_to": None,  # pay.sh does not publish it; the knock reads it
                 "network": "solana",
+                "catalog_options": None,
                 "payers_30d": None,
                 "calls_30d": None,
             })
@@ -116,7 +118,7 @@ def merge(rows):
             by[key] = r
     for r in by.values():
         r["network_standard"] = r["network"] in STANDARD_NETWORKS
-        r["needs_params"] = "{" in r["url"]
+        r["needs_params"] = bool(PLACEHOLDER.search(urlparse(r["url"]).path))
         r["free"] = r["price_usd"] == 0
         r["tier"] = "hourly" if ((r.get("payers_30d") or 0) >= HOURLY_MIN_PAYERS or "pay.sh" in r["sources"]) else "daily"
     return sorted(by.values(), key=lambda r: (r["tier"] != "hourly", -(r.get("payers_30d") or 0), r["id"]))

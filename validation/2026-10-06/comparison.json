@@ -1,0 +1,300 @@
+{
+ "rows": [
+  [
+   "N2",
+   7,
+   7,
+   7,
+   0.6456611570247934,
+   1.0
+  ],
+  [
+   "N6",
+   3,
+   3,
+   3,
+   0.43849391955098227,
+   1.0
+  ],
+  [
+   "N1",
+   159,
+   17,
+   20,
+   0.6395767041130426,
+   0.9476322080405041
+  ],
+  [
+   "N3",
+   155,
+   0,
+   20,
+   -1.3877787807814457e-17,
+   0.16113012549493322
+  ],
+  [
+   "N4",
+   159,
+   20,
+   20,
+   0.8388698745050667,
+   1.0
+  ],
+  [
+   "N5",
+   64,
+   19,
+   20,
+   0.7638641064874331,
+   0.9911187805671268
+  ],
+  [
+   "E",
+   155,
+   17,
+   20,
+   0.6395767041130426,
+   0.9476322080405041
+  ],
+  [
+   "D",
+   22,
+   10,
+   20,
+   0.2992949144298199,
+   0.7007050855701801
+  ],
+  [
+   "U",
+   52,
+   9,
+   10,
+   0.5958436145024278,
+   0.9821242504842788
+  ],
+  [
+   "ALIVE",
+   7022,
+   46,
+   50,
+   0.8116149745493629,
+   0.9684509967442093
+  ]
+ ],
+ "disagree": [
+  [
+   "N1",
+   "GET https://pay.brianbooms.com/api/v1/data/id-generate",
+   "n/a"
+  ],
+  [
+   "N1",
+   "GET https://pay.brianbooms.com/api/v1/data/joke",
+   "n/a"
+  ],
+  [
+   "N1",
+   "GET https://pay.brianbooms.com/api/v1/data/fortune",
+   "n/a"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/account-summary/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/polygon/should-pay/:address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/solana-fac/risk/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "POST https://api.locus.report/api/locus-flood-zone",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/solana-fac/account-age/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/solana-fac/tx-status/:solana_tx",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/should-pay/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/solana-fac/should-pay/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "POST https://api.locus.report/api/locus-capital-projects",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/base/whale-radar/:address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/base/should-pay/:address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/polygon/token-report/:address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://x402.dtelecom.org/v1/pricing",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/decision-report/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/solana-fac/token-liquidity/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/tx-status/:solana_tx",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/risk/:solana_address",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://generativelanguage.google.gateway-402.com/v1beta/models",
+   "False"
+  ],
+  [
+   "N3",
+   "POST https://api.locus.report/api/locus-fema-events",
+   "False"
+  ],
+  [
+   "N3",
+   "GET https://47620.xyz/x/solana-fac/whale-radar/:solana_address",
+   "False"
+  ],
+  [
+   "N5",
+   "POST https://conc-exe.xyz/api/concierge-intel-tvl",
+   "False"
+  ],
+  [
+   "E",
+   "POST https://lumierepaycheck.org/v1/plans/builder",
+   "False"
+  ],
+  [
+   "E",
+   "POST https://lumierepaycheck.org/v1/plans/business",
+   "False"
+  ],
+  [
+   "E",
+   "GET https://api.truthbear.co/mcp/server",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://api.mekler.ai/v1/email/domains/check-mail-configuration",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/product-description",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/blog-header-image-generate",
+   "False"
+  ],
+  [
+   "D",
+   "GET https://readx.sh/api/:name",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/flux-2-pro",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/product-search",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/amortization-schedule",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/email-verify-api",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/hacker-news-search",
+   "False"
+  ],
+  [
+   "D",
+   "POST https://x402.agentutility.ai/exchange-rates",
+   "False"
+  ],
+  [
+   "U",
+   "POST https://agents.ai-rook.com/api/summarize",
+   "False"
+  ],
+  [
+   "ALIVE",
+   "POST https://api.nansen.ai/api/v1/prediction-market/position-detail",
+   "False"
+  ],
+  [
+   "ALIVE",
+   "POST https://api.arkm.com/x402/polymarket/activity",
+   "False"
+  ],
+  [
+   "ALIVE",
+   "POST https://agentbit.app/v1/ai/ask",
+   "False"
+  ],
+  [
+   "ALIVE",
+   "POST https://agentbit.app/v1/finance/fx",
+   "False"
+  ]
+ ],
+ "alive_misses": [
+  "POST https://agentbit.app/v1/ai/ask",
+  "POST https://agentbit.app/v1/finance/fx"
+ ]
+}
