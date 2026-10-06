@@ -1,0 +1,1437 @@
+[
+ {
+  "n": 1,
+  "method": "GET",
+  "url": "https://api.loopholetape.com/mcp#launches_since#launches_since"
+ },
+ {
+  "n": 2,
+  "method": "POST",
+  "url": "https://api.vextorium.com/validar-email-pago"
+ },
+ {
+  "n": 3,
+  "method": "POST",
+  "url": "https://evidence.guildpilot.app/v1/extract"
+ },
+ {
+  "n": 4,
+  "method": "POST",
+  "url": "https://api.venice.ai/api/v1/video/transcriptions"
+ },
+ {
+  "n": 5,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/security-filings"
+ },
+ {
+  "n": 6,
+  "method": "POST",
+  "url": "https://x402.quicknode.com/sophon-testnet/"
+ },
+ {
+  "n": 7,
+  "method": "GET",
+  "url": "https://bob.assimilatethis.com/search"
+ },
+ {
+  "n": 8,
+  "method": "POST",
+  "url": "https://generativelanguage.google.gateway-402.com/v1beta/models/{modelsId}:generateContent"
+ },
+ {
+  "n": 9,
+  "method": "GET",
+  "url": "https://pay.smartmoney.market/api/ticker/{symbol}"
+ },
+ {
+  "n": 10,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/shopper/best-price"
+ },
+ {
+  "n": 11,
+  "method": "GET",
+  "url": "https://api.venice.ai/api/v1/api_keys/generate_web3_key"
+ },
+ {
+  "n": 12,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/kb/database-migration-rollback"
+ },
+ {
+  "n": 13,
+  "method": "POST",
+  "url": "https://api.mekler.ai/v1/web/pages/extract-static-content"
+ },
+ {
+  "n": 14,
+  "method": "POST",
+  "url": "https://twin.unykorn.org/geo/earthquakes"
+ },
+ {
+  "n": 15,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/history"
+ },
+ {
+  "n": 16,
+  "method": "POST",
+  "url": "https://api.munition.io/v1/serper/news"
+ },
+ {
+  "n": 17,
+  "method": "GET",
+  "url": "https://47620.xyz/x/whale-radar/:solana_address"
+ },
+ {
+  "n": 18,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/kb/agent-capability-registry"
+ },
+ {
+  "n": 19,
+  "method": "GET",
+  "url": "https://api.govparse.io/v1/insiders/clusters"
+ },
+ {
+  "n": 20,
+  "method": "POST",
+  "url": "https://twin.unykorn.org/verify-receipt"
+ },
+ {
+  "n": 21,
+  "method": "POST",
+  "url": "https://twin.unykorn.org/compound-growth"
+ },
+ {
+  "n": 22,
+  "method": "POST",
+  "url": "https://api.vextorium.com/blobs-ethereum-pago"
+ },
+ {
+  "n": 23,
+  "method": "POST",
+  "url": "https://proxy.suverse.io/v1/data/suverse-swpc-solar-wind-mag"
+ },
+ {
+  "n": 24,
+  "method": "POST",
+  "url": "https://phion.systems/v1/paid/trust/agent-budget-guard"
+ },
+ {
+  "n": 25,
+  "method": "GET",
+  "url": "https://api.robotsshop.io/v0/top"
+ },
+ {
+  "n": 26,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/bio/protein/:id"
+ },
+ {
+  "n": 27,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-wildfire-risk"
+ },
+ {
+  "n": 28,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/marketing/share-of-shelf"
+ },
+ {
+  "n": 29,
+  "method": "POST",
+  "url": "https://api.vextorium.com/v1/spain-tax-id-validate"
+ },
+ {
+  "n": 30,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-wikimedia-commons-area-context"
+ },
+ {
+  "n": 31,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/skill-supplier-due-diligence"
+ },
+ {
+  "n": 32,
+  "method": "GET",
+  "url": "https://47620.xyz/x/polygon/tx/:hash"
+ },
+ {
+  "n": 33,
+  "method": "GET",
+  "url": "https://47620.xyz/x/base/whale-radar/:address"
+ },
+ {
+  "n": 34,
+  "method": "POST",
+  "url": "https://api.vextorium.com/v1/nostr-profile"
+ },
+ {
+  "n": 35,
+  "method": "GET",
+  "url": "https://agoraverify.com/finance/contrepartie"
+ },
+ {
+  "n": 36,
+  "method": "GET",
+  "url": "https://laso.finance/order-gift-card"
+ },
+ {
+  "n": 37,
+  "method": "POST",
+  "url": "https://x402.quicknode.com/sui-testnet/"
+ },
+ {
+  "n": 38,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-underground-storage-tanks"
+ },
+ {
+  "n": 39,
+  "method": "GET",
+  "url": "https://netintel.dev/jwt-inspector/decode"
+ },
+ {
+  "n": 40,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/calibrated"
+ },
+ {
+  "n": 41,
+  "method": "GET",
+  "url": "https://api.x402node.dev/text/keywords"
+ },
+ {
+  "n": 42,
+  "method": "GET",
+  "url": "https://api.x402node.dev/market/open-interest"
+ },
+ {
+  "n": 43,
+  "method": "GET",
+  "url": "https://x402.quicknode.com/networks"
+ },
+ {
+  "n": 44,
+  "method": "POST",
+  "url": "https://videointelligence.google.gateway-402.com/v1/videos:annotate"
+ },
+ {
+  "n": 45,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-fema-events"
+ },
+ {
+  "n": 46,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/tender-search"
+ },
+ {
+  "n": 47,
+  "method": "GET",
+  "url": "https://x402engine.app/api/crypto/price"
+ },
+ {
+  "n": 48,
+  "method": "GET",
+  "url": "https://api.truthbear.co/stable/graveyard"
+ },
+ {
+  "n": 49,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/analyst/inflation"
+ },
+ {
+  "n": 50,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/cve"
+ },
+ {
+  "n": 51,
+  "method": "POST",
+  "url": "https://facebody.alibaba.gateway-402.com/generate-human-sketch-style"
+ },
+ {
+  "n": 52,
+  "method": "POST",
+  "url": "https://agent402.tools/api/image-gen-premium"
+ },
+ {
+  "n": 53,
+  "method": "GET",
+  "url": "https://api.losbeto.xyz/ai-news"
+ },
+ {
+  "n": 54,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/evm/arbitrum/transfers/:address"
+ },
+ {
+  "n": 55,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/crypto-validate"
+ },
+ {
+  "n": 56,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/artisan-peintre"
+ },
+ {
+  "n": 57,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/wind-forecast"
+ },
+ {
+  "n": 58,
+  "method": "GET",
+  "url": "https://47620.xyz/x/solana-fac/token-report/:solana_address"
+ },
+ {
+  "n": 59,
+  "method": "GET",
+  "url": "https://mini-tollbooth.onrender.com/trust"
+ },
+ {
+  "n": 60,
+  "method": "POST",
+  "url": "https://api.vextorium.com/contar-tokens-pago"
+ },
+ {
+  "n": 61,
+  "method": "GET",
+  "url": "https://tariffmonkee.com/paid/content"
+ },
+ {
+  "n": 62,
+  "method": "GET",
+  "url": "https://pay.smartmoney.market/api"
+ },
+ {
+  "n": 63,
+  "method": "GET",
+  "url": "https://pay.brianbooms.com/api/v1/buy/agent-wallpaper-golden-godrays"
+ },
+ {
+  "n": 64,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/company-changes"
+ },
+ {
+  "n": 65,
+  "method": "GET",
+  "url": "https://47620.xyz/x/token-safety/:solana_address"
+ },
+ {
+  "n": 66,
+  "method": "POST",
+  "url": "https://agdata.shveik.dev/x402/amazon"
+ },
+ {
+  "n": 67,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/artisan-serrurier"
+ },
+ {
+  "n": 68,
+  "method": "GET",
+  "url": "https://47620.xyz/x/token-price/:solana_address"
+ },
+ {
+  "n": 69,
+  "method": "GET",
+  "url": "https://agents.ai-rook.com/api/order-flow"
+ },
+ {
+  "n": 70,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/wallet-readiness"
+ },
+ {
+  "n": 71,
+  "method": "GET",
+  "url": "https://api.cryptoetfsentinel.com/v1/pipeline/velocity"
+ },
+ {
+  "n": 72,
+  "method": "POST",
+  "url": "https://surf.cascade.fyi/api/v1/twitter/users/relationship"
+ },
+ {
+  "n": 73,
+  "method": "GET",
+  "url": "https://api.maxwellinternational.ai/v1/macro/ecb/fx"
+ },
+ {
+  "n": 74,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/tariff-region"
+ },
+ {
+  "n": 75,
+  "method": "GET",
+  "url": "https://solana.x402.cryptorefills.com/v1/catalog"
+ },
+ {
+  "n": 76,
+  "method": "GET",
+  "url": "https://api.cryptoetfsentinel.com/v1/profiles/latest"
+ },
+ {
+  "n": 77,
+  "method": "POST",
+  "url": "https://agents.dexl.io/v1/tools/web-fetch"
+ },
+ {
+  "n": 78,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-environmental-history-lookup"
+ },
+ {
+  "n": 79,
+  "method": "GET",
+  "url": "https://api.x402node.dev/forex/convert/usd/eur/usd-eur"
+ },
+ {
+  "n": 80,
+  "method": "POST",
+  "url": "https://artifact-inspector.use.x402atlas.com/certificate"
+ },
+ {
+  "n": 81,
+  "method": "GET",
+  "url": "https://solana.x402.cryptorefills.com/v1/brands"
+ },
+ {
+  "n": 82,
+  "method": "GET",
+  "url": "https://pay.brianbooms.com/api/v1/data/id-generate"
+ },
+ {
+  "n": 83,
+  "method": "POST",
+  "url": "https://api.oblique.markets/api/v1/paid/x402-endpoint-verify"
+ },
+ {
+  "n": 84,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/health-news"
+ },
+ {
+  "n": 85,
+  "method": "GET",
+  "url": "https://api.x402node.dev/crypto/price"
+ },
+ {
+  "n": 86,
+  "method": "POST",
+  "url": "https://agdata.shveik.dev/x402/youtube"
+ },
+ {
+  "n": 87,
+  "method": "POST",
+  "url": "https://backpedal-discourse-easeful.ngrok-free.dev/similarity"
+ },
+ {
+  "n": 88,
+  "method": "GET",
+  "url": "https://iqs.alibaba.gateway-402.com/linked-retrieval/linked-retrieval-entry/v2/linkedRetrieval/commands/genericSearch"
+ },
+ {
+  "n": 89,
+  "method": "GET",
+  "url": "https://api.seerium.xyz/v1/prediction/whale-radar/top-10-recent-moves"
+ },
+ {
+  "n": 90,
+  "method": "GET",
+  "url": "https://api.seerium.xyz/v1/pulse/weather-markets"
+ },
+ {
+  "n": 91,
+  "method": "POST",
+  "url": "https://agent402.tools/api/robots-check"
+ },
+ {
+  "n": 92,
+  "method": "GET",
+  "url": "https://api.losbeto.xyz/commodity-price"
+ },
+ {
+  "n": 93,
+  "method": "GET",
+  "url": "https://api.prereason.com/api/btc/etf"
+ },
+ {
+  "n": 94,
+  "method": "GET",
+  "url": "https://api.truthbear.co/pay/tier3"
+ },
+ {
+  "n": 95,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/strata"
+ },
+ {
+  "n": 96,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/aicompute-region"
+ },
+ {
+  "n": 97,
+  "method": "GET",
+  "url": "https://x402.ochinimus.app/api/eth-price"
+ },
+ {
+  "n": 98,
+  "method": "GET",
+  "url": "https://pay.edge-agents.ai/v1/services/sentiment-contrarian"
+ },
+ {
+  "n": 99,
+  "method": "POST",
+  "url": "https://x402.browserbase.com/browser/session/sess_7f3a9c2e1b4d/extend"
+ },
+ {
+  "n": 100,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-opportunity-zone"
+ },
+ {
+  "n": 101,
+  "method": "GET",
+  "url": "https://pay.brianbooms.com/api/v1/data/fortune"
+ },
+ {
+  "n": 102,
+  "method": "GET",
+  "url": "https://agents.ai-rook.com/api/ip-lookup"
+ },
+ {
+  "n": 103,
+  "method": "GET",
+  "url": "https://api.x402node.dev/forex/convert/cny/hkd/cny-hkd"
+ },
+ {
+  "n": 104,
+  "method": "POST",
+  "url": "https://x402.api.agentmail.to/v0/lists/{direction}/{type}"
+ },
+ {
+  "n": 105,
+  "method": "GET",
+  "url": "https://voidfeed.ai/v1/content/fact-feed/latest"
+ },
+ {
+  "n": 106,
+  "method": "POST",
+  "url": "https://agents.allium.so/api/v1/developer/wallet/balances/history"
+ },
+ {
+  "n": 107,
+  "method": "POST",
+  "url": "https://api.socialintel.dev/v1/contact"
+ },
+ {
+  "n": 108,
+  "method": "POST",
+  "url": "https://x402-api.vybenetwork.xyz/v4/wallets/batch/nft-balances"
+ },
+ {
+  "n": 109,
+  "method": "POST",
+  "url": "https://data.tollkit.dev/data/company"
+ },
+ {
+  "n": 110,
+  "method": "GET",
+  "url": "https://api.prereason.com/api/cross/regime"
+ },
+ {
+  "n": 111,
+  "method": "POST",
+  "url": "https://api.vextorium.com/saldos-multiwallet-pago"
+ },
+ {
+  "n": 112,
+  "method": "GET",
+  "url": "https://travel.brij.fi/health"
+ },
+ {
+  "n": 113,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/package/search"
+ },
+ {
+  "n": 114,
+  "method": "POST",
+  "url": "https://api.anchor-x402.com/v1/price/token"
+ },
+ {
+  "n": 115,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/artisan-plombier"
+ },
+ {
+  "n": 116,
+  "method": "GET",
+  "url": "https://api.seerium.xyz/v1/prediction/rewards"
+ },
+ {
+  "n": 117,
+  "method": "GET",
+  "url": "https://api.robotsshop.io/v0/snapshot"
+ },
+ {
+  "n": 118,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/jwt-toolkit"
+ },
+ {
+  "n": 119,
+  "method": "POST",
+  "url": "https://agents.dexl.io/v1/tools/grid-demand"
+ },
+ {
+  "n": 120,
+  "method": "GET",
+  "url": "https://giftpulse.theaslangroupllc.com/api/giftcard/catalog"
+ },
+ {
+  "n": 121,
+  "method": "POST",
+  "url": "https://openai.mm.family/x402/v1/models/gpt-5.5-long/chat/completions"
+ },
+ {
+  "n": 122,
+  "method": "GET",
+  "url": "https://whaletape.xyz/liquidations/BTC"
+ },
+ {
+  "n": 123,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/stock-news"
+ },
+ {
+  "n": 124,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/filing-company"
+ },
+ {
+  "n": 125,
+  "method": "GET",
+  "url": "https://api.truthbear.co/pay/tier2"
+ },
+ {
+  "n": 126,
+  "method": "GET",
+  "url": "https://pay.edge-agents.ai/v1/services/rates-positioning-intelligence"
+ },
+ {
+  "n": 127,
+  "method": "POST",
+  "url": "https://twin.unykorn.org/defi/chain/ink"
+ },
+ {
+  "n": 128,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/drug-detail-region"
+ },
+ {
+  "n": 129,
+  "method": "GET",
+  "url": "https://shadowharness.com/v1/sidera/discovery"
+ },
+ {
+  "n": 130,
+  "method": "POST",
+  "url": "https://flipr-x402.fly.dev/x402/flip"
+ },
+ {
+  "n": 131,
+  "method": "POST",
+  "url": "https://svm402.com/quote-gate"
+ },
+ {
+  "n": 132,
+  "method": "POST",
+  "url": "https://dt0ur.online/api/geo/zip"
+ },
+ {
+  "n": 133,
+  "method": "POST",
+  "url": "https://api.zendiq.ai/v1/agent/analyse"
+ },
+ {
+  "n": 134,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/ability-check"
+ },
+ {
+  "n": 135,
+  "method": "GET",
+  "url": "https://anime-intelligence.goodmy0312.workers.dev/v1/price-history"
+ },
+ {
+  "n": 136,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/data/country"
+ },
+ {
+  "n": 137,
+  "method": "POST",
+  "url": "https://iqs.alibaba.gateway-402.com/linked-retrieval/linked-retrieval-entry/v1/iqs/readpage/scrape"
+ },
+ {
+  "n": 138,
+  "method": "POST",
+  "url": "https://toolvend.dev/calendar/business-days"
+ },
+ {
+  "n": 139,
+  "method": "GET",
+  "url": "https://agents.ai-rook.com/api/market-pulse"
+ },
+ {
+  "n": 140,
+  "method": "POST",
+  "url": "https://twin.unykorn.org/abi-encode"
+ },
+ {
+  "n": 141,
+  "method": "POST",
+  "url": "https://lumierepaycheck.org/v1/watch"
+ },
+ {
+  "n": 142,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/shopper/price-drop-alert"
+ },
+ {
+  "n": 143,
+  "method": "POST",
+  "url": "https://netintel.dev/openai/gpt-5-6-terra"
+ },
+ {
+  "n": 144,
+  "method": "GET",
+  "url": "https://aeml-x402.zeabur.app/stable/graveyard"
+ },
+ {
+  "n": 145,
+  "method": "GET",
+  "url": "https://avg-interest-rates.use.x402atlas.com/latest"
+ },
+ {
+  "n": 146,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/aviation-news"
+ },
+ {
+  "n": 147,
+  "method": "GET",
+  "url": "https://public-api.birdeye.so/x402/defi/v3/token/mint-burn-txs"
+ },
+ {
+  "n": 148,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/ip-asn"
+ },
+ {
+  "n": 149,
+  "method": "POST",
+  "url": "https://twin.unykorn.org/research/pypi-package"
+ },
+ {
+  "n": 150,
+  "method": "GET",
+  "url": "https://x402-seller-pmlm.onrender.com/report"
+ },
+ {
+  "n": 151,
+  "method": "GET",
+  "url": "https://api.robotsshop.io/v0/search"
+ },
+ {
+  "n": 152,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/grid-reliability-region"
+ },
+ {
+  "n": 153,
+  "method": "POST",
+  "url": "https://api.vextorium.com/pdf-metadatos-pago"
+ },
+ {
+  "n": 154,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/analyst/category-summary"
+ },
+ {
+  "n": 155,
+  "method": "POST",
+  "url": "https://app.earnfi.fun/api/ai-agent/v1/catalog"
+ },
+ {
+  "n": 156,
+  "method": "GET",
+  "url": "https://api.urbangametheory.xyz/agent/oracle/facts"
+ },
+ {
+  "n": 157,
+  "method": "POST",
+  "url": "https://generativelanguage.google.gateway-402.com/v1beta/models/{modelsId}:asyncBatchEmbedContent"
+ },
+ {
+  "n": 158,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/ai-health"
+ },
+ {
+  "n": 159,
+  "method": "GET",
+  "url": "https://api.marketintelligenceapi.com/api/v1/intelligence/quote"
+ },
+ {
+  "n": 160,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/defilending-region"
+ },
+ {
+  "n": 161,
+  "method": "GET",
+  "url": "https://api.x402node.dev/maps/reverse"
+ },
+ {
+  "n": 162,
+  "method": "GET",
+  "url": "https://api.venice.ai/api/v1/api_keys/{id}"
+ },
+ {
+  "n": 163,
+  "method": "GET",
+  "url": "https://api.seerium.xyz/v1/pulse/catalysts"
+ },
+ {
+  "n": 164,
+  "method": "GET",
+  "url": "https://api.truthbear.co/resolve/proposer"
+ },
+ {
+  "n": 165,
+  "method": "GET",
+  "url": "https://onchainpulse.theaslangroupllc.com/api/legislation"
+ },
+ {
+  "n": 166,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/evm/bsc/balance/:address"
+ },
+ {
+  "n": 167,
+  "method": "GET",
+  "url": "https://public-api.birdeye.so/x402/defi/token_creation_info"
+ },
+ {
+  "n": 168,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/air"
+ },
+ {
+  "n": 169,
+  "method": "GET",
+  "url": "https://agents.ai-rook.com/api/gas-tracker"
+ },
+ {
+  "n": 170,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/japan-region"
+ },
+ {
+  "n": 171,
+  "method": "POST",
+  "url": "https://twin.unykorn.org/prove"
+ },
+ {
+  "n": 172,
+  "method": "GET",
+  "url": "https://pay.edge-agents.ai/v1/services/macro-de-unemployment"
+ },
+ {
+  "n": 173,
+  "method": "GET",
+  "url": "https://x402-api.vybenetwork.xyz/v4/wallets/{ownerAddress}/token-balance"
+ },
+ {
+  "n": 174,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/census"
+ },
+ {
+  "n": 175,
+  "method": "GET",
+  "url": "https://agent402.tools/api/edgar-filings"
+ },
+ {
+  "n": 176,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/macro-economics"
+ },
+ {
+  "n": 177,
+  "method": "GET",
+  "url": "https://pay.edge-agents.ai/v1/services/investment-committee-pack"
+ },
+ {
+  "n": 178,
+  "method": "GET",
+  "url": "https://agora-x402-production.up.railway.app/fr/entreprises"
+ },
+ {
+  "n": 179,
+  "method": "POST",
+  "url": "https://agents.allium.so/api/v1/explorer/queries/run-async"
+ },
+ {
+  "n": 180,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/shopper/deal-finder"
+ },
+ {
+  "n": 181,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/analyst/price-dispersion"
+ },
+ {
+  "n": 182,
+  "method": "GET",
+  "url": "https://x402.orthogonal.com/aviato/person/founded-companies"
+ },
+ {
+  "n": 183,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/marketing/promo-intelligence"
+ },
+ {
+  "n": 184,
+  "method": "GET",
+  "url": "https://gateway.spraay.app/api/v1/robots/profile"
+ },
+ {
+  "n": 185,
+  "method": "POST",
+  "url": "https://sol.mapleai.shop/api/v1/images/generations"
+ },
+ {
+  "n": 186,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/options-analytics"
+ },
+ {
+  "n": 187,
+  "method": "POST",
+  "url": "https://x402.quicknode.com/injective-mainnet/"
+ },
+ {
+  "n": 188,
+  "method": "GET",
+  "url": "https://api.purch.xyz/x402/search"
+ },
+ {
+  "n": 189,
+  "method": "GET",
+  "url": "https://47620.xyz/x/solana-fac/account-summary/:solana_address"
+ },
+ {
+  "n": 190,
+  "method": "GET",
+  "url": "https://x402.orthogonal.com/scrapecreators/v1/tiktok/profile"
+ },
+ {
+  "n": 191,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/property-search"
+ },
+ {
+  "n": 192,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/kb/dns-tls-deployment-triage"
+ },
+ {
+  "n": 193,
+  "method": "GET",
+  "url": "https://api.robotsshop.io/v0/live"
+ },
+ {
+  "n": 194,
+  "method": "POST",
+  "url": "https://x402engine.app/api/llm/gpt-6-astra"
+ },
+ {
+  "n": 195,
+  "method": "POST",
+  "url": "https://dt0ur.online/api/payouts/cross-border"
+ },
+ {
+  "n": 196,
+  "method": "POST",
+  "url": "https://phion.systems/v1/paid/trust/ap2-mandate-bridge"
+ },
+ {
+  "n": 197,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/security-price"
+ },
+ {
+  "n": 198,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/entity-enrich"
+ },
+ {
+  "n": 199,
+  "method": "GET",
+  "url": "https://x402.ottoai.services/equity-smart-money"
+ },
+ {
+  "n": 200,
+  "method": "POST",
+  "url": "https://phion.systems/v1/paid/commercial/inference"
+ },
+ {
+  "n": 201,
+  "method": "POST",
+  "url": "https://scopeapi.dev/product-research"
+ },
+ {
+  "n": 202,
+  "method": "GET",
+  "url": "https://bob.assimilatethis.com/extract"
+ },
+ {
+  "n": 203,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-ownership-loop"
+ },
+ {
+  "n": 204,
+  "method": "GET",
+  "url": "https://whaletape.xyz/pulse"
+ },
+ {
+  "n": 205,
+  "method": "GET",
+  "url": "https://api.venice.ai/api/v1/models/compatibility_mapping"
+ },
+ {
+  "n": 206,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/evm/optimism/allowance/:address/:address2/:address3"
+ },
+ {
+  "n": 207,
+  "method": "POST",
+  "url": "https://translate.google.gateway-402.com/v3/projects/{projectsId}/locations/{locationsId}:translateText"
+ },
+ {
+  "n": 208,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/rail-trip-brief"
+ },
+ {
+  "n": 209,
+  "method": "POST",
+  "url": "https://agdata.shveik.dev/x402/google-news"
+ },
+ {
+  "n": 210,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/keyword-suggest"
+ },
+ {
+  "n": 211,
+  "method": "GET",
+  "url": "https://api.robotsshop.io/v0/swartzpath"
+ },
+ {
+  "n": 212,
+  "method": "POST",
+  "url": "https://imageseg.alibaba.gateway-402.com/segment-food"
+ },
+ {
+  "n": 213,
+  "method": "GET",
+  "url": "https://x402.spendthebits.com/@stbclaudeprod/address-risk/"
+ },
+ {
+  "n": 214,
+  "method": "GET",
+  "url": "https://pay.edge-agents.ai/v1/services/macro-pl-reserves-months-imports"
+ },
+ {
+  "n": 215,
+  "method": "GET",
+  "url": "https://api.x-402.online/v1/chain/ens"
+ },
+ {
+  "n": 216,
+  "method": "GET",
+  "url": "https://voidfeed.ai/v1/content/extract/dataset/latest"
+ },
+ {
+  "n": 217,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/contract-audit"
+ },
+ {
+  "n": 218,
+  "method": "POST",
+  "url": "https://api.vextorium.com/calculadora-staking-pago"
+ },
+ {
+  "n": 219,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/biodiversity-region"
+ },
+ {
+  "n": 220,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/artisan-electricien"
+ },
+ {
+  "n": 221,
+  "method": "GET",
+  "url": "https://2s.io/api/gov/osha-inspections"
+ },
+ {
+  "n": 222,
+  "method": "GET",
+  "url": "https://api.syntalic.com/v1/shopper/price-history"
+ },
+ {
+  "n": 223,
+  "method": "GET",
+  "url": "https://47620.xyz/x/base/block/0"
+ },
+ {
+  "n": 224,
+  "method": "POST",
+  "url": "https://agdata.shveik.dev/x402/google-search"
+ },
+ {
+  "n": 225,
+  "method": "GET",
+  "url": "https://stablefinance.dev/api/prices"
+ },
+ {
+  "n": 226,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-market-context"
+ },
+ {
+  "n": 227,
+  "method": "POST",
+  "url": "https://translate.google.gateway-402.com/v3/projects/{projectsId}/locations/{locationsId}:detectLanguage"
+ },
+ {
+  "n": 228,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/token-price/solana/:solana_address"
+ },
+ {
+  "n": 229,
+  "method": "POST",
+  "url": "https://api.vextorium.com/crates-paquete-pago"
+ },
+ {
+  "n": 230,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-regulated-facility-compliance"
+ },
+ {
+  "n": 231,
+  "method": "POST",
+  "url": "https://artifact-inspector.use.x402atlas.com/csr"
+ },
+ {
+  "n": 232,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/inflation-check"
+ },
+ {
+  "n": 233,
+  "method": "GET",
+  "url": "https://reader.outbid.sh/scrape"
+ },
+ {
+  "n": 234,
+  "method": "GET",
+  "url": "https://agent402.tools/api/onchain-sql-schema"
+ },
+ {
+  "n": 235,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/flight-route-risk"
+ },
+ {
+  "n": 236,
+  "method": "GET",
+  "url": "https://api.robotsshop.io/v0/spookfiles/search"
+ },
+ {
+  "n": 237,
+  "method": "POST",
+  "url": "https://x402.aispace.bot/api/v1/image/upscale"
+ },
+ {
+  "n": 238,
+  "method": "GET",
+  "url": "https://pay.smartmoney.market/api/insider-tracked-stocks"
+ },
+ {
+  "n": 239,
+  "method": "GET",
+  "url": "https://pplx.x402.paysponge.com/v1/models"
+ },
+ {
+  "n": 240,
+  "method": "POST",
+  "url": "https://api.vextorium.com/v1/provider-status"
+ },
+ {
+  "n": 241,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/border-wait-region"
+ },
+ {
+  "n": 242,
+  "method": "GET",
+  "url": "https://api.purch.xyz/x402/vault/search"
+ },
+ {
+  "n": 243,
+  "method": "GET",
+  "url": "https://public-api.birdeye.so/x402/defi/ohlcv/pair"
+ },
+ {
+  "n": 244,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/hacker-news-search"
+ },
+ {
+  "n": 245,
+  "method": "GET",
+  "url": "https://47620.xyz/x/solana-fac/decision-report/:solana_address"
+ },
+ {
+  "n": 246,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/crypto-news"
+ },
+ {
+  "n": 247,
+  "method": "GET",
+  "url": "https://public-api.birdeye.so/x402/defi/v3/token/list"
+ },
+ {
+  "n": 248,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/earthquake-region"
+ },
+ {
+  "n": 249,
+  "method": "GET",
+  "url": "https://chain-analyzer.com/api/v1/x402/token/:address/peg-status"
+ },
+ {
+  "n": 250,
+  "method": "POST",
+  "url": "https://api.venice.ai/api/v1/augment/search"
+ },
+ {
+  "n": 251,
+  "method": "GET",
+  "url": "https://api.aidress.ai/pay/agent_voidfeed_ai"
+ },
+ {
+  "n": 252,
+  "method": "GET",
+  "url": "https://solana.x402.cryptorefills.com/v1/price"
+ },
+ {
+  "n": 253,
+  "method": "GET",
+  "url": "https://api.marketintelligenceapi.com/api/v1/fundamentals/BTCUSD"
+ },
+ {
+  "n": 254,
+  "method": "GET",
+  "url": "https://x402-api.vybenetwork.xyz/v4/wallets/{ownerAddress}/pnl-ts"
+ },
+ {
+  "n": 255,
+  "method": "POST",
+  "url": "https://api.delx.ai/api/v1/x402/cookie-domain-match"
+ },
+ {
+  "n": 256,
+  "method": "GET",
+  "url": "https://x402.quicknode.com/discovery/resources"
+ },
+ {
+  "n": 257,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/insurance-claim"
+ },
+ {
+  "n": 258,
+  "method": "GET",
+  "url": "https://api.socialintel.dev/v1/contact"
+ },
+ {
+  "n": 259,
+  "method": "GET",
+  "url": "https://pay.brianbooms.com/api/v1/buy/bazaar-ping"
+ },
+ {
+  "n": 260,
+  "method": "GET",
+  "url": "https://api.cra-agent.tech/v1/paid/wiki/article"
+ },
+ {
+  "n": 261,
+  "method": "POST",
+  "url": "https://agents.ai-rook.com/api/email-validate"
+ },
+ {
+  "n": 262,
+  "method": "GET",
+  "url": "https://rubric-protocol.com/v1/x402/hedera-facts/rubric-activity"
+ },
+ {
+  "n": 263,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/qr-generator"
+ },
+ {
+  "n": 264,
+  "method": "GET",
+  "url": "https://api.losbeto.xyz/agent-call"
+ },
+ {
+  "n": 265,
+  "method": "POST",
+  "url": "https://api.nansen.ai/api/v1/profiler/address/first-funder"
+ },
+ {
+  "n": 266,
+  "method": "POST",
+  "url": "https://cleared.ink/wan/t2v/480p"
+ },
+ {
+  "n": 267,
+  "method": "GET",
+  "url": "https://x402-api.vybenetwork.xyz/v4/oracle/pyth/pricefeeds/{priceFeedAddress}/candles"
+ },
+ {
+  "n": 268,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/news-russia"
+ },
+ {
+  "n": 269,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/battery-metals-brief"
+ },
+ {
+  "n": 270,
+  "method": "GET",
+  "url": "https://saylorinnovations.com/api/evm/base/storage/:address/0"
+ },
+ {
+  "n": 271,
+  "method": "GET",
+  "url": "https://api.truthbear.co/gauge/drug-shortage-region"
+ },
+ {
+  "n": 272,
+  "method": "POST",
+  "url": "https://agent402.tools/api/skill/earnings-deep-dive"
+ },
+ {
+  "n": 273,
+  "method": "GET",
+  "url": "https://pay.smartmoney.market/api/ticker/{symbol}/funds"
+ },
+ {
+  "n": 274,
+  "method": "GET",
+  "url": "https://api.maxwellinternational.ai/v1/edgar/financials"
+ },
+ {
+  "n": 275,
+  "method": "POST",
+  "url": "https://api.locus.report/api/locus-representatives"
+ },
+ {
+  "n": 276,
+  "method": "GET",
+  "url": "https://agent402.tools/api/fred-series-info"
+ },
+ {
+  "n": 277,
+  "method": "GET",
+  "url": "https://api.xynaptic.io/v1/security-eu-price"
+ },
+ {
+  "n": 278,
+  "method": "POST",
+  "url": "https://agents.dexl.io/v1/tools/wallet-balance"
+ },
+ {
+  "n": 279,
+  "method": "GET",
+  "url": "https://api.venice.ai/api/v1/models"
+ },
+ {
+  "n": 280,
+  "method": "GET",
+  "url": "https://mini-tollbooth.onrender.com/search"
+ },
+ {
+  "n": 281,
+  "method": "POST",
+  "url": "https://sentinel-agent.dev/v1/guard"
+ },
+ {
+  "n": 282,
+  "method": "GET",
+  "url": "https://api.truthbear.co/mcp/census"
+ },
+ {
+  "n": 283,
+  "method": "POST",
+  "url": "https://x402.agentutility.ai/exchange-rates"
+ },
+ {
+  "n": 284,
+  "method": "POST",
+  "url": "https://api.oblique.markets/api/v1/paid/agentcore-route"
+ },
+ {
+  "n": 285,
+  "method": "GET",
+  "url": "https://api.seerium.xyz/v1/meme-radar/quality-volume"
+ },
+ {
+  "n": 286,
+  "method": "GET",
+  "url": "https://x402.ochinimus.app/api/cascade-history"
+ },
+ {
+  "n": 287,
+  "method": "GET",
+  "url": "https://aayatai.com/trends"
+ }
+]
